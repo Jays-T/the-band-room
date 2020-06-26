@@ -1,53 +1,56 @@
 {% extends 'base.html' %} {% block content %}
-<div class="card">
-  <div class="card-image waves-effect waves-block waves-light">
-    <img
-      class="activator"
-      src="{{url_for('static', filename='assets/images/rock_musicians.png')}}"
-    />
-  </div>
-  <div class="card-content">
-    <span class="card-title activator grey-text text-darken-4"
-      >Get Started<i class="material-icons right">more_vert</i></span
-    >
-    <p><a href="#">This is a link</a></p>
-  </div>
-  <div class="card-reveal">
-    <span class="card-title grey-text text-darken-4"
-      >Create your Band Room<i class="material-icons right">close</i></span
-    >
-    <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <input
-              placeholder="Name"
-              id="first_name"
-              type="text"
-              class="validate"
-            />
-            <label for="first_name">Name</label>
+<div class="container">
+  <h1>Welcome to The Band Room</h1>
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img
+        class="activator"
+        src="{{url_for('static', filename='assets/images/rock_musicians.png')}}"
+      />
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4"
+        >Get Started<i class="material-icons right">more_vert</i></span
+      >
+      <p><a href="#">This is a link</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"
+        >Create your Band Room<i class="material-icons right">close</i></span
+      >
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input
+                placeholder="Name"
+                id="first_name"
+                type="text"
+                class="validate"
+              />
+              <label for="first_name">Name</label>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="password" type="password" class="validate" />
-            <label for="password">Room Key</label>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate" />
+              <label for="password">Room Key</label>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="band_name" type="text" class="validate" />
-            <label for="band_name">Band Name</label>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="band_name" type="text" class="validate" />
+              <label for="band_name">Band Name</label>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="email" type="email" class="validate" />
-            <label for="email">Email</label>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate" />
+              <label for="email">Email</label>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 </div>

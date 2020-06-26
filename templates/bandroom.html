@@ -1,23 +1,43 @@
 {% extends 'base.html' %} {% block content %}
+<div class="container">
   <div class="card">
-  {% for room in band_rooms %}
+    {% for room in band_rooms %}
     <div class="card-content">
       <p>{{room.owner_name}}, {{room.band_name}}</p>
     </div>
     {% endfor %}
     <div class="card-tabs">
-    {% for event in events %}
       <ul class="tabs tabs-fixed-width">
-        <li class="tab"><a href="#test4">{{event.category_name}}</a></li>
+        <li class="tab"><a href="#test4"></a></li>
         <li class="tab"><a class="active" href="#test5">Notes</a></li>
         <li class="tab"><a href="#test6">When</a></li>
       </ul>
     </div>
     <div class="card-content grey lighten-4">
       <div id="test4">Test 1</div>
-      <div id="test5">{{event.event_description}}</div>
-      <div id="test6">{{event.event_date}}{{event.event_time}}</div>
+      <div id="test5"></div>
+      <div id="test6"></div>
     </div>
-    {% endfor %}
   </div>
+</div>
+<div class="container">
+  <ul class="collapsible">
+    {% for event in events %}
+    <li>
+      <div class="collapsible-header">
+        <i class="material-icons">filter_drama</i>{{event.category_name}}
+      </div>
+      <div class="collapsible-body">
+        <ul>
+        
+          <li>Date: {{event.event_date}}</li>
+          <li>Time: {{event.event_time}}</li>
+          <li>Notes: {{event.event_description}}</li>
+        
+        </ul>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
 {% endblock %}
