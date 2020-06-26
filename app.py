@@ -16,8 +16,10 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
-def the_band_room():
-    return 'Welcome to The Band Room'
+@app.route('/band_room')
+def get_band_rooms():
+    return render_template("bandroom.html",
+                           band_rooms=mongo.db.band_rooms.find())
 
 
 if __name__ == '__main__':

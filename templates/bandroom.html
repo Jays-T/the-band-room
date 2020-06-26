@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for room in band_rooms %}
+    {{room.owner_name}}
+    {{room.band_name}}
+    {{room.room_notes}}
+    {{room.room_events}}
+    {{room.room_songs}}
+    {% endfor %}
+</body>
+</html>
