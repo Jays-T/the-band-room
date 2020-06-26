@@ -1,4 +1,13 @@
-.base-bg {
-    background-image: url("../assets/images/rock_musicians.png");
-    min-height: 80% vh;
-}
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  .base-bg {
+      min-height: 80vh;
+  }
