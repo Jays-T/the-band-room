@@ -1,17 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% for room in band_rooms %}
-    {{room.owner_name}}
-    {{room.band_name}}
-    {{room.room_notes}}
-    {{room.room_events}}
-    {{room.room_songs}}
+{% extends 'base.html' %} {% block content %}
+  <div class="card">
+  {% for room in band_rooms %}
+    <div class="card-content">
+      <p>{{room.owner_name}}, {{room.band_name}}</p>
+    </div>
     {% endfor %}
-</body>
-</html>
+    <div class="card-tabs">
+    {% for event in events %}
+      <ul class="tabs tabs-fixed-width">
+        <li class="tab"><a href="#test4">{{event.category_name}}</a></li>
+        <li class="tab"><a class="active" href="#test5">Notes</a></li>
+        <li class="tab"><a href="#test6">When</a></li>
+      </ul>
+    </div>
+    <div class="card-content grey lighten-4">
+      <div id="test4">Test 1</div>
+      <div id="test5">{{event.event_description}}</div>
+      <div id="test6">{{event.event_date}}{{event.event_time}}</div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}
