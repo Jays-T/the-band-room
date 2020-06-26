@@ -3,20 +3,20 @@
   <div class="card">
     {% for room in band_rooms %}
     <div class="card-content">
-      <p>{{room.owner_name}}, {{room.band_name}}</p>
+      <p><img src="{{url_for('static', filename='assets/images/rock-musicians-192x192.png')}}"/>{{room.owner_name}}<h3>{{room.band_name}}</h3></p>
     </div>
     {% endfor %}
     <div class="card-tabs">
       <ul class="tabs tabs-fixed-width">
-        <li class="tab"><a href="#test4"></a></li>
-        <li class="tab"><a class="active" href="#test5">Notes</a></li>
+        <li class="tab"><a class="active" href="#test4">Members</a></li>
+        <li class="tab"><a href="#test5">Notes</a></li>
         <li class="tab"><a href="#test6">When</a></li>
       </ul>
     </div>
     <div class="card-content grey lighten-4">
       <div id="test4">Test 1</div>
-      <div id="test5"></div>
-      <div id="test6"></div>
+      <div id="test5">Test 2</div>
+      <div id="test6">Test 3</div>
     </div>
   </div>
 </div>
