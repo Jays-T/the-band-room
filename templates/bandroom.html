@@ -5,7 +5,7 @@
     <div class="card-content">
       <p><img src="{{url_for('static', filename='assets/images/rock-musicians-192x192.png')}}"/>{{room.owner_name}}<h3>{{room.band_name}}</h3></p>
     </div>
-    {% endfor %}
+    
     <div class="card-tabs">
       <ul class="tabs tabs-fixed-width">
         <li class="tab"><a class="active" href="#test4">Members</a></li>
@@ -20,6 +20,25 @@
     </div>
   </div>
 </div>
+<div class="container">
+<ul class="collapsible">
+    
+    <li>
+      <div class="collapsible-header">
+        <i class="material-icons">filter_drama</i>{{room.band_events[0]}}
+      </div>
+        <div class="collapsible-body">
+        <ul>
+        
+          <li>Date: {{room.band_events[1]}}</li>
+          <li>Time: {{room.band_events[2]}}</li>
+          <li>Notes: {{room.band_events[3]}}</li>
+        
+        </ul>
+        </div>
+    </li>
+    {% endfor %}
+  </ul></div>
 <div class="container">
   <ul class="collapsible">
     {% for event in events %}
