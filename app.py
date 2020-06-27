@@ -28,6 +28,12 @@ def get_band_rooms():
                            events=mongo.db.events.find())
 
 
+@app.route('/browse_rooms')
+def browse_rooms():
+    return render_template("browserooms.html",
+                           band_rooms=mongo.db.band_rooms.find())
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
