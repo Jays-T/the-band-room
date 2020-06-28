@@ -17,8 +17,9 @@ mongo = PyMongo(app)
 
 @app.route('/')
 @app.route('/the_band_room')
-def the_band_room():
-    return render_template("addbandroom.html")
+def add_band_room():
+    return render_template("addbandroom.html",
+                           )
 
 
 @app.route('/band_room')

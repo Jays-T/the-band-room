@@ -11,3 +11,7 @@
   .base-bg {
       min-height: 80vh;
   }
+
+  .text-center {
+      text-align: center;
+  }
