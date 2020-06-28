@@ -17,9 +17,16 @@ mongo = PyMongo(app)
 
 @app.route('/')
 @app.route('/the_band_room')
-def add_band_room():
+def the_band_room():
     return render_template("addbandroom.html",
                            )
+
+
+@app.route('/add_room', methods=['POST'])
+def add_band_room():
+    new_room = mongo.db.band_rooms
+    new_room.insert_one(request.form.to_dict())
+    return redirect(url_for('browse_rooms'))
 
 
 @app.route('/band_room')

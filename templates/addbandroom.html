@@ -17,35 +17,41 @@
         >Create your room!<i class="material-icons right">close</i></span
       >
       <div class="row">
-        <form class="col s12">
+        <form action="{{ url_for('add_band_room') }}" method="POST" class="col s12">
           <div class="row">
             <div class="input-field col s12">
             <i class="material-icons prefix">account_circle</i>
-              <input id="first_name" type="text" class="validate" />
-              <label for="first_name">Your Name</label>
+              <input id="owner_name" name="owner_name" type="text" class="validate" />
+              <label for="owner_name">Your Name</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12 tooltipped" data-position="top" data-tooltip="This is your unique Room Key - Don't make it too simple and make sure to save and remember your Room Key">
               <i class="material-icons prefix">lock</i>
-              <input id="password" type="password" class="validate" />
-              <label for="password">Room Key</label>
+              <input id="room_key" name="room_key" type="password" class="validate" />
+              <label for="room_key">Room Key</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
             <i class="material-icons prefix">album</i>
-              <input id="band_name" type="text" class="validate" />
+              <input id="band_name" name="band_name" type="text" class="validate" />
               <label for="band_name">Band Name</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
             <i class="material-icons prefix">email</i>
-              <input id="email" type="email" class="validate" />
-              <label for="email">Email</label>
+              <input id="owner_email" name="owner_email" type="email" class="validate" />
+              <label for="owner_email">Email</label>
             </div>
           </div>
+          <div class="row">
+            <div class="input-field col s12 text-center">
+            <button class="waves-effect waves-light btn-large" type="submit" name="action">Create Room</button>
+            </div>
+          </div>
+          
         </form>
       </div>
     </div>
