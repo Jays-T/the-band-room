@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  {% block head %}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -47,16 +48,17 @@
       href="{{url_for('static', filename='assets/css/style.css')}}"
       type="text/css"
     />
-    <title>The Band Room</title>
+    <title>The Band Room - {% block title %}{% endblock %}</title>
+  {% endblock %}
   </head>
   <body>
     <header>
       <nav>
         <div class="nav-wrapper orange">
-          <a href="#" class="brand-logo">The Band Room</a>
+          <a href="{{url_for('the_band_room')}}" class="brand-logo">The Band Room</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#">Get Started</a></li>
-            <li><a href="#">Rooms</a></li>
+            <li><a href="{{url_for('the_band_room')}}">Get Started</a></li>
+            <li><a href="{{url_for('browse_rooms')}}">Rooms</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </div>
@@ -67,33 +69,19 @@
         %}
         <div class="container alert-{{category}}">The Band Room Says: {{ message }}</div>
         {% endfor %}
-      <div class="container base-bg">
+      <div class="container minimum-content-height">
         {% block content %} {% endblock %}
       </div>
     </main>
     <footer class="page-footer orange">
       <div class="container">
         <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Footer Content</h5>
-            <p class="grey-text text-lighten-4">
-              You can use rows and columns here to organize your footer content.
-            </p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-            </ul>
-          </div>
+          
         </div>
       </div>
       <div class="footer-copyright">
         <div class="container">
-          © 2014 Copyright Text
+          © 2020 The Band Room - By Jays-T
           <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
         </div>
       </div>

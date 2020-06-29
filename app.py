@@ -19,14 +19,12 @@ mongo = PyMongo(app)
 @app.route('/the_band_room')
 # Default landing page
 def the_band_room():
-    return render_template("addbandroom.html",
-                           )
+    return render_template("addbandroom.html")
 
 
 # This function adds a new band room
 @app.route('/add_room', methods=['POST'])
 def add_band_room():
-    # take the information from the create room form
     room_key = request.form["room_key"]
     # iterate over stored band rooms to check
     # if the name and room key are available
@@ -44,17 +42,29 @@ def add_band_room():
         return redirect(url_for('browse_rooms'))
 
 
-@app.route('/band_room')
-def get_band_rooms():
-    return render_template("bandroom.html",
-                           band_rooms=mongo.db.band_rooms.find(),
-                           events=mongo.db.events.find())
-
-
 @app.route('/browse_rooms')
 def browse_rooms():
     return render_template("browserooms.html",
                            band_rooms=mongo.db.band_rooms.find())
+
+
+@app.route('/open_room')
+def open_room():
+    return render_template("openroom.html")
+
+
+@app.route('/my_room', methods=['POST'])
+def my_room():
+    room_key_open = request.form["room_key_open"]
+    combined_key = mongo.db.band_rooms.find((
+        {"room_key": room_key_open}))
+    if combined_key == 1:
+        return render_template("bandroom.html",
+                               room=mongo.db.band_rooms.find((
+                                   {"room_key": room_key_open})))
+    else:
+        flash('Oops seems like the Room Key was not right')
+        return redirect(url_for('open_room'))
 
 
 if __name__ == '__main__':

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}{% block title %}Open Room{% endblock %}{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+<div class="container">
+  <h1>Get in to your room</h1>
+  <form
+          id="open-room-form"
+          action="{{ url_for('my_room') }}"
+          method="POST"
+          class="col s12"
+        >
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">album</i>
+              <input
+                id="band_name_open"
+                name="band_name_open"
+                type="text"
+                required="required"
+                class="validate"
+              />
+              <label for="band_name">Band Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="input-field col s12 tooltipped"
+              data-position="top"
+              data-tooltip="This is your unique Room Key - Don't make it too simple and make sure to save and remember your Room Key"
+            >
+              <i class="material-icons prefix">lock</i>
+              <input
+                id="room_key_open"
+                name="room_key_open"
+                type="text"
+                required="required"
+                class="validate"
+              />
+              <label for="room_key">Room Key</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 text-center">
+              <button
+                class="waves-effect waves-light btn-large"
+                type="submit"
+                name="action"
+              >
+                Open Room
+              </button>
+            </div>
+          </div>
+        </form>
+</div>
+{% endblock %}

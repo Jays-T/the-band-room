@@ -8,7 +8,7 @@
     flex: 1 0 auto;
   }
 
-  .base-bg {
+  .minimum-content-height {
       min-height: 80vh;
   }
 
@@ -17,7 +17,11 @@
   }
 
   .alert-error {
-  background-color: red;
-  color: white;
-  text-align: center;
-}
+      background-color: red;
+      color: white;
+  }
+
+  .alert-success {
+      background-color: green;
+      color: white;
+  }

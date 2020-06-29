@@ -1,4 +1,7 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}{% block title %}Add a band room{% endblock %}{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
 <div class="container">
   <h1>Welcome to The Band Room</h1>
   <div class="card">
@@ -19,6 +22,7 @@
       <div class="row">
 
         <form
+          id="create-room-form"
           action="{{ url_for('add_band_room') }}"
           method="POST"
           class="col s12"
@@ -59,7 +63,7 @@
               <input
                 id="room_key"
                 name="room_key"
-                type="password"
+                type="text"
                 required="required"
                 class="validate"
               />

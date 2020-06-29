@@ -1,4 +1,7 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}{% block title %}Your Room{% endblock %}{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
 <div class="container">
   <div class="card">
     {% for room in band_rooms %}
@@ -19,26 +22,8 @@
       <div id="test6">Test 3</div>
     </div>
   </div>
+      {% endfor %}
 </div>
-<div class="container">
-<ul class="collapsible">
-    
-    <li>
-      <div class="collapsible-header">
-        <i class="material-icons">filter_drama</i>{{room.band_events[0]}}
-      </div>
-        <div class="collapsible-body">
-        <ul>
-        
-          <li>Date: {{room.band_events[1]}}</li>
-          <li>Time: {{room.band_events[2]}}</li>
-          <li>Notes: {{room.band_events[3]}}</li>
-        
-        </ul>
-        </div>
-    </li>
-    {% endfor %}
-  </ul></div>
 <div class="container">
   <ul class="collapsible">
     {% for event in events %}
