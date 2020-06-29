@@ -55,13 +55,18 @@ def open_room():
 
 @app.route('/my_room', methods=['POST'])
 def my_room():
-    room_key_open = request.form["room_key_open"]
-    combined_key = mongo.db.band_rooms.find((
-        {"room_key": room_key_open}))
-    if combined_key == 1:
+    band_name = request.form["band_name_open"]
+    room_key = request.form["room_key_open"]
+    check_rooms = mongo.db.band_rooms.count_documents((
+        {"room_key": room_key}))
+    if check_rooms > 0:
+        the_room = mongo.db.band_rooms.find_one(
+            {"band_name": request.form["band_name_open"],
+             "room_key": request.form["room_key_open"]})
         return render_template("bandroom.html",
-                               room=mongo.db.band_rooms.find((
-                                   {"room_key": room_key_open})))
+                               the_room=the_room,
+                               band_name=band_name,
+                               room_key=room_key)
     else:
         flash('Oops seems like the Room Key was not right')
         return redirect(url_for('open_room'))
