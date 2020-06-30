@@ -42,21 +42,23 @@ def add_band_room():
         return redirect(url_for('browse_rooms'))
 
 
+# This function displays all the rooms to the user
 @app.route('/browse_rooms')
 def browse_rooms():
     return render_template("browserooms.html",
                            band_rooms=mongo.db.band_rooms.find())
 
 
-@app.route('/edit_room')
-def edit_room():
-    return render_template("editroom.html")
-
-
+# This function finds the selected room and displays the room to the user
 @app.route('/my_room/<room_id>')
 def my_room(room_id):
     the_room = mongo.db.band_rooms.find_one({'_id': ObjectId(room_id)})
     return render_template('bandroom.html', room=the_room)
+
+
+@app.route('/edit_room')
+def edit_room():
+    return render_template("editroom.html")
 
 
 if __name__ == '__main__':
