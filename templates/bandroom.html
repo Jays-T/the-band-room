@@ -1,47 +1,22 @@
 {% extends 'base.html' %}{% block title %}Your Room{% endblock %}{% block head %}
-  {{ super() }}
+{{ super() }}
 {% endblock %}
 {% block content %}
 <div class="container">
-  <div class="card">
-    {% for room in the_room %}
-    <div class="card-content">
-      <p><img src="{{url_for('static', filename='assets/images/rock-musicians-192x192.png')}}"/>{{room.owner_name}}<h3>{{room.band_name}}</h3></p>
-    </div>
-    
-    <div class="card-tabs">
-      <ul class="tabs tabs-fixed-width">
-        <li class="tab"><a class="active" href="#test4">Members</a></li>
-        <li class="tab"><a href="#test5">Notes</a></li>
-        <li class="tab"><a href="#test6">When</a></li>
-      </ul>
-    </div>
-    <div class="card-content grey lighten-4">
-      <div id="test4">Test 1</div>
-      <div id="test5">Test 2</div>
-      <div id="test6">Test 3</div>
-    </div>
-  </div>
-      {% endfor %}
-</div>
-<div class="container">
-  <ul class="collapsible">
-    {% for event in events %}
-    <li>
-      <div class="collapsible-header">
-        <i class="material-icons">filter_drama</i>{{event.category_name}}
-      </div>
-      <div class="collapsible-body">
-        <ul>
-        
-          <li>Date: {{event.event_date}}</li>
-          <li>Time: {{event.event_time}}</li>
-          <li>Notes: {{event.event_description}}</li>
-        
-        </ul>
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
-{% endblock %}
+
+	{% for the_room in room %}
+
+	<h3>{{room.band_name}}'s Band Room</h3>
+	<div class="row">
+		<div class="col s12 m6">
+			<div class="card blue-grey darken-1">
+				<div class="card-content white-text">
+					<p>Listen to our music: <a href="{{room.social_media[0]}}"
+							target="_blank"><i class="material-icons">queue_music</i></a></p>
+					<p>{{room.band_notes[0]}}</p>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	{% endblock %}
