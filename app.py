@@ -48,9 +48,9 @@ def browse_rooms():
                            band_rooms=mongo.db.band_rooms.find())
 
 
-@app.route('/open_room')
-def open_room():
-    return render_template("openroom.html")
+@app.route('/edit_room')
+def edit_room():
+    return render_template("editroom.html")
 
 
 @app.route('/my_room/<room_id>')
