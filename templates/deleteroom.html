@@ -3,10 +3,10 @@
 {% endblock %}
 {% block content %}
 <div class="container">
-  <h3>Edit your Band Room</h3>
+  <h3>Delete your Band Room</h3>
   <form
           id="edit-room-form"
-          action="{{ url_for('update_room', room_id=room._id) }}"
+          action="{{ url_for('delete_room', room_id=room._id) }}"
           method="POST"
           class="col s12"
         >
@@ -41,56 +41,13 @@
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s12">
-              <i class="material-icons prefix">album</i>
-              <input
-                id="band_name"
-                name="band_name"
-                type="text"
-                required="required"
-                class="validate"
-              />
-              <label for="band_name">{{room.band_name}}</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <i class="material-icons prefix">event_note</i>
-              <input
-                id="band_notes[]"
-                name="band_notes"
-                type="text"
-                required="required"
-                class="validate"
-              />
-              <label for="band_notes">{{room.band_notes}}</label>
-            </div>
-          </div>
-            <div class="row">
-            <div
-              class="input-field col s12 tooltipped"
-              data-position="top"
-              data-tooltip="Add a link to your facebook page or soundcloud or spotify"
-            >
-              <i class="material-icons prefix">play_circle_outline</i>
-              <input
-                id="social_media[]"
-                name="social_media"
-                type="text"
-                required="required"
-                class="validate"
-              />
-              <label for="social_media">{{room.social_media}}</label>
-            </div>
-          </div>
-          <div class="row">
             <div class="input-field col s12 text-center">
               <button
                 class="waves-effect waves-light btn-large"
                 type="submit"
                 name="action"
               >
-                Edit Room
+                Delete Room
               </button>
             </div>
           </div>
