@@ -26,15 +26,16 @@ def the_band_room():
 @app.route('/add_room', methods=['POST'])
 def add_band_room():
     room_key = request.form["room_key"]
-    # iterate over stored band rooms to check
-    # if the name and room key are available
+    """
+    iterate over stored band rooms to check
+    if the room key is available
+    """
     check_key = mongo.db.band_rooms.count_documents((
         {"room_key": room_key}))
     if check_key > 0:
-        # if name and room key are not available
-        flash('Sorry that room key is unavailable', 'error')
+        flash('Sorry that username and room key is unavailable', 'error')
         return redirect(url_for('the_band_room'))
-    # if both name and key are available the room will be created
+    # if the key is available the room will be created
     else:
         new_room = mongo.db.band_rooms
         new_room.insert_one(request.form.to_dict())
@@ -67,8 +68,8 @@ def update_room(room_id):
     rooms = mongo.db.band_rooms
     rooms.update({'_id': ObjectId(room_id)},
     {
-        'band_name':request.form.get('band_name'),
-        'band_notes':request.form.get('band_notes'),
+        'band_name': request.form.get('band_name'),
+        'band_notes': request.form.get('band_notes'),
         'social_media': request.form.get('social_media'),
     })
     return redirect(url_for('browse_rooms'))

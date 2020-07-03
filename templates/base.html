@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  {% block head %}
+    {% block head %}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -49,13 +49,18 @@
       type="text/css"
     />
     <title>The Band Room - {% block title %}{% endblock %}</title>
-  {% endblock %}
+    {% endblock %}
   </head>
   <body>
     <header>
       <nav>
         <div class="nav-wrapper orange">
-          <a href="{{url_for('the_band_room')}}" class="brand-logo">The Band Room</a>
+          <a href="{{url_for('the_band_room')}}" class="brand-logo"
+            ><i class="material-icons prefix">home</i></a
+          >
+          <a href="#" data-target="mobile-nav" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="{{url_for('the_band_room')}}">Get Started</a></li>
             <li><a href="{{url_for('browse_rooms')}}">Rooms</a></li>
@@ -63,22 +68,23 @@
           </ul>
         </div>
       </nav>
+      <ul class="sidenav" id="mobile-nav">
+        <li><a href="{{url_for('the_band_room')}}">Get Started</a></li>
+        <li><a href="{{url_for('browse_rooms')}}">Rooms</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </header>
     <main>
-        {% for category, message in get_flashed_messages(with_categories=True)
-        %}
-        <div class="container alert-{{category}}">The Band Room Says: {{ message }}</div>
-        {% endfor %}
+      {% for category, message in get_flashed_messages(with_categories=True) %}
+      <div class="container alert-{{category}}">
+        The Band Room Says: {{ message }}
+      </div>
+      {% endfor %}
       <div class="container minimum-content-height">
         {% block content %} {% endblock %}
       </div>
     </main>
     <footer class="page-footer orange">
-      <div class="container">
-        <div class="row">
-          
-        </div>
-      </div>
       <div class="footer-copyright">
         <div class="container">
           © 2020 The Band Room - By Jays-T
@@ -88,5 +94,10 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+      });
+    </script>
   </body>
 </html>

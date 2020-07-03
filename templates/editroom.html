@@ -57,7 +57,7 @@
             <div class="input-field col s12">
               <i class="material-icons prefix">event_note</i>
               <input
-                id="band_notes[]"
+                id="band_notes"
                 name="band_notes"
                 type="text"
                 required="required"
@@ -70,19 +70,18 @@
             <div
               class="input-field col s12 tooltipped"
               data-position="top"
-              data-tooltip="Add a link to your facebook page or soundcloud or spotify"
+              data-tooltip="Add a link to your spotify"
             >
               <i class="material-icons prefix">play_circle_outline</i>
               <input
-                id="social_media[]"
+                id="social_media"
                 name="social_media"
                 type="text"
-                required="required"
                 class="validate"
               />
-              <label for="social_media">{{room.social_media}}</label>
+              <label for="social_media">{{room.social_media[0]}}</label>
             </div>
-          </div>
+            </div>
           <div class="row">
             <div class="input-field col s12 text-center">
               <button
