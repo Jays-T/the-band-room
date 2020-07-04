@@ -1,7 +1,7 @@
 import os
 import bcrypt
-from flask import Flask, render_template, url_for, request, redirect, \
-     flash, session
+from flask import Flask, render_template, url_for, request, session, \
+     flash, redirect
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists('env.py'):
@@ -20,15 +20,18 @@ mongo = PyMongo(app)
 @app.route('/the_band_room')
 # Default landing page
 def the_band_room():
-    return render_template('addbandroom.html')
+    return render_template('index.html')
 
 
+# This function registers a new user
+# Function adapted from PrettyPrinted.
+# Please refer to Credits section of README.md for more info.
 @app.route('/register_user', methods=['POST', 'GET'])
 def register_user():
     if request.method == 'POST':
         users = mongo.db.users
         already_user = users.find_one({'user_name': request.form['user_name']})
-
+        # checks users to see if username is already taken
         if already_user is None:
             hashpass = bcrypt.hashpw(request.form['user_key'].encode('utf-8'),
                                      bcrypt.gensalt())
@@ -53,7 +56,7 @@ def add_band_room():
     check_key = mongo.db.band_rooms.count_documents((
         {"room_key": room_key}))
     if check_key > 0:
-        flash('Sorry that username and room key is unavailable', 'error')
+        flash('Sorry that room key is unavailable', 'error')
         return redirect(url_for('the_band_room'))
     # if the key is available the room will be created
     else:
@@ -77,12 +80,16 @@ def my_room(room_id):
     return render_template('bandroom.html', room=the_room)
 
 
+# This function finds the selected room
+# and displays the form for editing the selected room
 @app.route('/edit_room/<room_id>')
 def edit_room(room_id):
     the_room = mongo.db.band_rooms.find_one({'_id': ObjectId(room_id)})
     return render_template('editroom.html', room=the_room)
 
 
+# This function takes the information from the edit room
+# form and updates the room information in the database
 @app.route('/update_room/<room_id>', methods=['POST'])
 def update_room(room_id):
     rooms = mongo.db.band_rooms
@@ -95,6 +102,7 @@ def update_room(room_id):
     return redirect(url_for('browse_rooms'))
 
 
+# This function deletes the selected room
 @app.route('/delete_room/<room_id>')
 def delete_room(room_id):
     mongo.db.band_rooms.remove({'_id': ObjectId(room_id)})

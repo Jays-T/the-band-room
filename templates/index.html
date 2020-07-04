@@ -1,0 +1,73 @@
+{% extends 'base.html' %}{% block title %}Add a band room{% endblock %}{% block
+head %} {{ super() }} {% endblock %} {% block content %}
+<div class="container">
+  <h1>Welcome to The Band Room</h1>
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img
+        class="activator"
+        src="{{url_for('static', filename='assets/images/rock-musicians-480x300.png')}}"
+      />
+    </div>
+    <div class="card-content text-center">
+      <a class="activator waves-effect waves-light btn-large">Get Started</a>
+      <p></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"
+        >Create your room!<i class="material-icons right">close</i></span
+      >
+      <ul class="collection collapsible">
+        <li class="collection-item avatar">
+          <div class="collapsible-header">
+            <i class="material-icons circle red">account_circle</i>
+            <span class="title"
+              >Step One: <br />
+              Register <br />
+              your account</span
+            >
+            <span class="secondary-content"
+              ><i class="material-icons grade-red">grade</i></span
+            >
+          </div>
+          <div class="collapsible-body">
+            <span>Lorem ipsum dolor sit amet.</span>
+          </div>
+        </li>
+        <li class="collection-item avatar">
+          <div class="collapsible-header">
+            <i class="material-icons circle yellow">add</i>
+            <span class="title"
+              >Step Two: <br />
+              Create your <br />
+              Band Room</span
+            >
+            <a href="#!" class="secondary-content"
+              ><i class="material-icons">grade</i></a
+            >
+          </div>
+          <div class="collapsible-body">
+            <span>Lorem ipsum dolor sit amet.</span>
+          </div>
+        </li>
+        <li class="collection-item avatar">
+          <div class="collapsible-header">
+            <i class="material-icons circle green">share</i>
+            <span class="title"
+              >Step Three: <br />
+              Share it <br />
+              with the world.</span
+            >
+            <a href="#!" class="secondary-content"
+              ><i class="material-icons">grade</i></a
+            >
+          </div>
+          <div class="collapsible-body">
+            <span>Or at least with the rest of the band.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
