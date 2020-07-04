@@ -20,10 +20,26 @@ mongo = PyMongo(app)
 @app.route('/the_band_room')
 # Default landing page
 def the_band_room():
-    if 'username' in session:
-        return 'You are logged in as ' + session[username]
-
     return render_template('addbandroom.html')
+
+
+@app.route('/register_user', methods=['POST', 'GET'])
+def register_user():
+    if request.method == 'POST':
+        users = mongo.db.users
+        already_user = users.find_one({'user_name': request.form['user_name']})
+
+        if already_user is None:
+            hashpass = bcrypt.hashpw(request.form['user_key'].encode('utf-8'),
+                                     bcrypt.gensalt())
+            users.insert_one({'user_name': request.form['user_name'],
+                              'user_key': hashpass})
+            session['user_name'] = request.form['user_name']
+            return redirect(url_for('the_band_room'))
+
+        return 'That username already exists!'
+
+    return render_template('register.html')
 
 
 # This function adds a new band room
