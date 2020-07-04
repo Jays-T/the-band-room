@@ -1,0 +1,56 @@
+{% extends 'base.html' %}{% block title %}Register User With The Band Room{% endblock %}{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+<div class="container">
+  <h3>Create your account</h3>
+  <form
+          id="create-account-form"
+          action="{{ url_for('register_user') }}"
+          method="POST"
+          class="col s12"
+        >
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">account_circle</i>
+              <input
+                id="user_name"
+                name="user_name"
+                type="text"
+                required="required"
+                class="validate"
+              />
+              <label for="user_name">Username</label>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="input-field col s12 tooltipped"
+              data-position="top"
+              data-tooltip="This is your unique Room Key - You'll need to enter it correctly to edit the room"
+            >
+              <i class="material-icons prefix">lock</i>
+              <input
+                id="password"
+                name="password"
+                type="text"
+                required="required"
+                class="validate"
+              />
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 text-center">
+              <button
+                class="waves-effect waves-light btn-large"
+                type="submit"
+                name="action"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+        </form>
+</div>
+{% endblock %}
