@@ -67,11 +67,11 @@ def edit_room(room_id):
 def update_room(room_id):
     rooms = mongo.db.band_rooms
     rooms.update({'_id': ObjectId(room_id)},
-    {
-        'band_name': request.form.get('band_name'),
-        'band_notes': request.form.get('band_notes'),
-        'social_media': request.form.get('social_media'),
-    })
+                 {'$set':
+                  {'band_name': request.form.get('band_name'),
+                   'band_notes': request.form.get('band_notes'),
+                   'social_media': request.form.get('social_media')
+                   }})
     return redirect(url_for('browse_rooms'))
 
 
