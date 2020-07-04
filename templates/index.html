@@ -10,7 +10,9 @@ head %} {{ super() }} {% endblock %} {% block content %}
       />
     </div>
     <div class="card-content text-center">
-      <a class="activator waves-effect waves-light btn-large purple">Get Started</a>
+      <a class="activator waves-effect waves-light btn-large purple"
+        >Get Started</a
+      >
       <p></p>
     </div>
     <div class="card-reveal">
@@ -22,22 +24,27 @@ head %} {{ super() }} {% endblock %} {% block content %}
           <div class="header">
             <i class="material-icons circle red">account_circle</i>
             <span class="title">Step One: <br /></span>
-            <button data-target="register_user_modal" class="btn modal-trigger red">
+            <button
+              data-target="register_user_modal"
+              class="btn modal-trigger red text-black"
+            >
               Register
             </button>
             <span class="secondary-content"
-              ><i class="material-icons grade-red">grade</i></span
+              ><i class="material-icons">grade</i></span
             >
           </div>
         </li>
         <li class="collection-item avatar">
           <div class="header">
             <i class="material-icons circle yellow">add</i>
-            <span class="title"
-              >Step Two: <br />
-              Create your <br />
-              Band Room</span
+            <span class="title">Step Two: <br /></span>
+            <button
+              data-target="create_room_modal"
+              class="btn modal-trigger yellow text-black"
             >
+              Create Room
+            </button>
             <a href="#!" class="secondary-content"
               ><i class="material-icons">grade</i></a
             >
@@ -60,5 +67,5 @@ head %} {{ super() }} {% endblock %} {% block content %}
     </div>
   </div>
 </div>
-{% include 'components/registerform.html' %}
-{% endblock %}
+{% include 'components/registerform.html' %} {% include
+'components/createroomform.html' %} {% endblock %}

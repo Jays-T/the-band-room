@@ -1,9 +1,99 @@
-  <div id="create_room_modal" class="modal">
+<div id="create_room_modal" class="modal">
+  <form
+    id="create-room-form"
+    action="{{ url_for('add_band_room') }}"
+    method="POST"
+    class="col s12"
+  >
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input
+            id="owner_name"
+            name="owner_name"
+            type="text"
+            required="required"
+            class="validate"
+          />
+          <label for="owner_name">Your Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="input-field col s12 tooltipped"
+          data-position="top"
+          data-tooltip="This is your unique Room Key - Don't make it too simple and make sure to save and remember your Room Key"
+        >
+          <i class="material-icons prefix">lock</i>
+          <input
+            id="room_key"
+            name="room_key"
+            type="text"
+            required="required"
+            class="validate"
+          />
+          <label for="room_key">Room Key</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">album</i>
+          <input
+            id="band_name"
+            name="band_name"
+            type="text"
+            required="required"
+            class="validate"
+          />
+          <label for="band_name">Band Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">event_note</i>
+          <input
+            id="band_notes"
+            name="band_notes"
+            type="text"
+            required="required"
+            class="validate"
+          />
+          <label for="band_notes">Band Description</label>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="input-field col s12 tooltipped"
+          data-position="top"
+          data-tooltip="Add a link to your facebook page or soundcloud or spotify"
+        >
+          <i class="material-icons prefix">play_circle_outline</i>
+          <input
+            id="social_media"
+            name="social_media"
+            type="text"
+            class="validate"
+          />
+          <label for="social_media">Add a link to your bands music</label>
+        </div>
+      </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      <div class="row">
+        <div class="input-field col s12 text-center">
+          <button
+            class="waves-effect waves-light btn-large"
+            type="submit"
+            name="action"
+          >
+            Create Room
+          </button>
+        </div>
+      </div>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+        >Close</a
+      >
     </div>
-  </div>
+  </form>
+</div>
