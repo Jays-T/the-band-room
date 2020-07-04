@@ -10,32 +10,28 @@ head %} {{ super() }} {% endblock %} {% block content %}
       />
     </div>
     <div class="card-content text-center">
-      <a class="activator waves-effect waves-light btn-large">Get Started</a>
+      <a class="activator waves-effect waves-light btn-large purple">Get Started</a>
       <p></p>
     </div>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"
         >Create your room!<i class="material-icons right">close</i></span
       >
-      <ul class="collection collapsible">
+      <ul class="collection">
         <li class="collection-item avatar">
-          <div class="collapsible-header">
+          <div class="header">
             <i class="material-icons circle red">account_circle</i>
-            <span class="title"
-              >Step One: <br />
-              Register <br />
-              your account</span
-            >
+            <span class="title">Step One: <br /></span>
+            <button data-target="register_user_modal" class="btn modal-trigger red">
+              Register
+            </button>
             <span class="secondary-content"
               ><i class="material-icons grade-red">grade</i></span
             >
           </div>
-          <div class="collapsible-body">
-            <span>Lorem ipsum dolor sit amet.</span>
-          </div>
         </li>
         <li class="collection-item avatar">
-          <div class="collapsible-header">
+          <div class="header">
             <i class="material-icons circle yellow">add</i>
             <span class="title"
               >Step Two: <br />
@@ -46,12 +42,9 @@ head %} {{ super() }} {% endblock %} {% block content %}
               ><i class="material-icons">grade</i></a
             >
           </div>
-          <div class="collapsible-body">
-            <span>Lorem ipsum dolor sit amet.</span>
-          </div>
         </li>
         <li class="collection-item avatar">
-          <div class="collapsible-header">
+          <div class="header">
             <i class="material-icons circle green">share</i>
             <span class="title"
               >Step Three: <br />
@@ -62,12 +55,10 @@ head %} {{ super() }} {% endblock %} {% block content %}
               ><i class="material-icons">grade</i></a
             >
           </div>
-          <div class="collapsible-body">
-            <span>Or at least with the rest of the band.</span>
-          </div>
         </li>
       </ul>
     </div>
   </div>
 </div>
+{% include 'components/registerform.html' %}
 {% endblock %}

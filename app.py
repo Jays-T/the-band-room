@@ -38,6 +38,7 @@ def register_user():
             users.insert_one({'user_name': request.form['user_name'],
                               'user_key': hashpass})
             session['user_name'] = request.form['user_name']
+            flash('User created successfully', 'success')
             return redirect(url_for('the_band_room'))
 
         return 'That username already exists!'
