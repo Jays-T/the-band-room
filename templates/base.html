@@ -95,9 +95,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
-      $(document).ready(function(){
-    $('.modal').modal();
-  });
+      $(document).ready(function () {
+        $(".modal").modal();
+      });
+
+      $("#register_show_password").click(function(){
+          showPwd();
+      });
+
+      function showPwd() {
+        let x = document.getElementById("user_key");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
     </script>
   </body>
 </html>
