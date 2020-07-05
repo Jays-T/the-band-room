@@ -17,7 +17,7 @@ head %} {{ super() }} {% endblock %} {% block content %}
     </div>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"
-        >Create your room!<i class="material-icons right">close</i></span
+        ><i class="material-icons right">close</i></span
       >
       <ul class="collection">
         <li class="collection-item avatar">
@@ -40,10 +40,10 @@ head %} {{ super() }} {% endblock %} {% block content %}
             <i class="material-icons circle yellow">add</i>
             <span class="title">Step Two: <br /></span>
             <button
-              data-target="create_room_modal"
+              data-target="login_user_modal"
               class="btn modal-trigger yellow text-black"
             >
-              Create Room
+              Login
             </button>
             <a href="#!" class="secondary-content"
               ><i class="material-icons">grade</i></a
@@ -68,4 +68,4 @@ head %} {{ super() }} {% endblock %} {% block content %}
   </div>
 </div>
 {% include 'components/registerform.html' %} {% include
-'components/createroomform.html' %} {% endblock %}
+'components/createroomform.html' %} {% include 'components/loginform.html' %} {% endblock %}

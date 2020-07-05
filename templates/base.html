@@ -58,13 +58,14 @@
           <a href="{{url_for('the_band_room')}}" class="brand-logo"
             ><i class="material-icons prefix">home</i></a
           >
+          <span></span>
           <a href="#" data-target="mobile-nav" class="sidenav-trigger"
             ><i class="material-icons">menu</i></a
           >
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="{{url_for('the_band_room')}}">Get Started</a></li>
             <li><a href="{{url_for('browse_rooms')}}">Rooms</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="{{url_for('logout')}}">logout {{session['username']}}</a></li>
           </ul>
         </div>
       </nav>

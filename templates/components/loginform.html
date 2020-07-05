@@ -1,0 +1,56 @@
+<!-- register form modal -->
+<div id="login_user_modal" class="modal">
+  <form
+    id="create-account-form"
+    action="{{ url_for('login') }}"
+    method="POST"
+    class="col s12"
+  >
+    <div class="modal-content">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            required="required"
+            class="validate"
+          />
+          <label for="username">Username</label>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="input-field col s12 tooltipped"
+        >
+          <i class="material-icons prefix">lock</i>
+          <input
+            id="user_key"
+            name="user_key"
+            type="password"
+            required="required"
+            class="validate"
+          />
+          <label for="user_key">Password</label>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="row">
+        <div class="input-field col s12 text-center">
+          <button
+            class="waves-effect waves-light btn-large"
+            type="submit"
+            name="action"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+        >Close</a
+      >
+    </div>
+  </form>
+</div>
