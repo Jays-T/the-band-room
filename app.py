@@ -30,18 +30,18 @@ def the_band_room():
 def register_user():
     if request.method == 'POST':
         users = mongo.db.users
-        already_user = users.find_one({'user_name': request.form['user_name']})
+        already_user = users.find_one({'username': request.form['username']})
         # checks users to see if username is already taken
         if already_user is None:
             hashpass = bcrypt.hashpw(request.form['user_key'].encode('utf-8'),
                                      bcrypt.gensalt())
-            users.insert_one({'user_name': request.form['user_name'],
+            users.insert_one({'username': request.form['username'],
                               'user_key': hashpass})
-            session['user_name'] = request.form['user_name']
-            flash('User created successfully', 'success')
+            session['username'] = request.form['username']
+            flash('Account created successfully', 'success')
             return redirect(url_for('the_band_room'))
 
-        return 'That username already exists!'
+        return 'That Username already exists!'
 
     return render_template('register.html')
 
