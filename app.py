@@ -20,7 +20,27 @@ mongo = PyMongo(app)
 @app.route('/the_band_room')
 # Default landing page
 def the_band_room():
+    if 'username' in session:
+        return 'You are logged in as ' + session['username']
+
     return render_template('index.html')
+
+
+# This function allows an existing user to login
+@app.route('/login')
+def login():
+    users = mongo.db.users
+    user_login = users.find_one({'username': request.form['username']})
+
+    if user_login:
+        if bcrypt.hashpw(request.form['user_key'].encode('utf-8'),
+                         user_login['user_key'].encode('utf-8')) == \
+                             user_login['user_key'].encode('utf-8'):
+            session['username'] = request.form['username']
+
+            return redirect(url_for('the_band_room'))
+
+    return 'Invalid username/password combination'
 
 
 # This function registers a new user
