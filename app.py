@@ -50,7 +50,7 @@ def login():
                          user_login['user_key']) == user_login['user_key']:
             session['username'] = request.form['username']
             flash('Logged in. Welcome ' + session['username'], 'success')
-            return redirect(url_for('the_band_room'))
+            return redirect(url_for('user_landing'))
 
         flash('Invalid Username/Password combination', 'error')
 
@@ -85,6 +85,14 @@ def register_user():
     flash('Something went wrong', 'error')
     return render_template('error.html')
 
+
+@app.route('/user_landing')
+def user_landing():
+    if 'username' in session:
+        return render_template('userlanding.html')
+
+    flash('If you do not have an account register one now - if you do have an account you can login', 'error')
+    return redirect(url_for('register'))
 
 # This function adds a new band room
 @app.route('/add_room', methods=['POST'])
