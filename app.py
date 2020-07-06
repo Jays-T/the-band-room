@@ -77,7 +77,8 @@ def register_user():
 
         return 'That Username already exists!'
 
-    return render_template('register.html')
+    flash('Something went wrong', 'error')
+    return render_template('error.html')
 
 
 # This function adds a new band room
