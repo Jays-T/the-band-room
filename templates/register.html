@@ -1,54 +1,73 @@
 {% extends 'base.html' %}{% block title %}Register User With The Band Room{%
 endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
-<div class="container">
+<div class="container flex-row">
   <h3>Create your account</h3>
-  <form
-    id="create-account-form"
-    action="{{ url_for('register_user') }}"
-    method="POST"
-    class="col s12"
-  >
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="material-icons prefix">account_circle</i>
-        <input
-          id="user_name"
-          name="user_name"
-          type="text"
-          required="required"
-          class="validate"
-        />
-        <label for="user_name">Username</label>
-      </div>
-    </div>
-    <div class="row">
-      <div
-        class="input-field col s12 tooltipped"
-        data-position="top"
-        data-tooltip="This is your password - Don't make it too simple"
+  <div class="card">
+    <div class="card-content">
+      <form
+        id="create-account-form"
+        action="{{ url_for('register_user') }}"
+        method="POST"
+        class="col s12"
       >
-        <i class="material-icons prefix">lock</i>
-        <input
-          id="user_key"
-          name="user_key"
-          type="text"
-          required="required"
-          class="validate"
-        />
-        <label for="user_key">Password</label>
-      </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">account_circle</i>
+            <input
+              id="user_name"
+              name="user_name"
+              type="text"
+              required="required"
+              class="validate"
+            />
+            <label for="user_name">Username</label>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="input-field col s12 tooltipped"
+            data-position="top"
+            data-tooltip="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+          >
+            <i class="material-icons prefix">lock</i>
+            <input
+              id="user_key"
+              name="user_key"
+              type="text"
+              required="required"
+              class="validate"
+            />
+            <label for="user_key">Password</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <label>
+              <input type="checkbox" id="register_show_password" />
+              <span>Show password</span>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 text-center">
+            <button
+              class="waves-effect waves-light btn-large"
+              type="submit"
+              name="action"
+            >
+              Register
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
-    <div class="row">
-      <div class="input-field col s12 text-center">
-        <button
-          class="waves-effect waves-light btn-large"
-          type="submit"
-          name="action"
-        >
-          Register
-        </button>
-      </div>
+    <div id="message">
+      <h3>Password must contain the following:</h3>
+      <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+      <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+      <p id="number" class="invalid">A <b>number</b></p>
+      <p id="length" class="invalid">Minimum <b>8 characters</b></p>
     </div>
-  </form>
+  </div>
 </div>
 {% endblock %}

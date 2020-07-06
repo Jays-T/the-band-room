@@ -21,14 +21,14 @@ head %} {{ super() }} {% endblock %} {% block content %}
       <div class="card">
         <div class="card-image">
           <img
-            src="{{url_for('static', filename='assets/images/rock-musicians-192x192.png')}}"
+            src="{{  url_for('static', filename='assets/images/rock-musicians-192x192.png')  }}"
           />
           <span class="card-title">{{room.owner_name}}</span>
           <a
             href="{{ url_for('my_room', room_id=room._id) }}"
             class="btn-floating halfway-fab waves-effect waves-light red"
             ><img
-              src="{{url_for('static', filename='assets/images/door-handle-right-side-70x90.png')}}"
+              src="{{  url_for('static', filename='assets/images/door-handle-right-side-70x90.png')  }}"
           /></a>
         </div>
         <div class="card-content">

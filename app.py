@@ -57,6 +57,11 @@ def login():
     flash('Invalid Username', 'error')
 
 
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
+
 # This function registers a new user
 # Function adapted from PrettyPrinted.
 # Please refer to Credits section of README.md for more info.
@@ -73,7 +78,7 @@ def register_user():
                               'user_key': hashpass})
             session['username'] = request.form['username']
             flash('Account created successfully', 'success')
-            return redirect(url_for('the_band_room'))
+            return redirect(url_for('browse_rooms'))
 
         return 'That Username already exists!'
 
