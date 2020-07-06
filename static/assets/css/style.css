@@ -8,8 +8,13 @@
     flex: 1 0 auto;
   }
 
+  .flex-row {
+      justify-content: space-evenly;
+      flex-flow: column wrap;
+  }
+
   .minimum-content-height {
-      min-height: 80vh;
+      min-height: 60vh;
   }
 
   .text-center {
@@ -36,4 +41,8 @@
 
   .text-black {
       color: #111111;
+  }
+
+  .rounded-border {
+      border-radius: 10px 60px 10px;
   }
