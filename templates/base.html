@@ -54,17 +54,19 @@
   <body>
     <header>
       <div class="navbar-fixed">
-        <nav>
-          <div class="nav-wrapper orange">
+        <nav class="orange">
+          <div class="nav-wrapper container orange">
             <a href="{{url_for('the_band_room')}}" class="brand-logo"
-              ><i class="material-icons prefix">home</i></a
+              ><img src="{{url_for('static', filename='assets/images/the-band-room-icon-32x32.png')}}"/></a
             >
             <span></span>
             <a href="#" data-target="mobile-nav" class="sidenav-trigger"
               ><i class="material-icons">menu</i></a
             >
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="{{url_for('the_band_room')}}">Get Started</a></li>
+              <li class="active">
+                <a href="{{url_for('the_band_room')}}">Get Started</a>
+              </li>
               <li><a href="{{url_for('browse_rooms')}}">Rooms</a></li>
               <li>
                 <a href="{{url_for('logout')}}"
