@@ -57,8 +57,9 @@
         <nav class="orange">
           <div class="nav-wrapper container orange">
             <a href="{{url_for('the_band_room')}}" class="brand-logo"
-              ><img src="{{url_for('static', filename='assets/images/the-band-room-icon-32x32.png')}}"/></a
-            >
+              ><img
+                src="{{url_for('static', filename='assets/images/the-band-room-icon-32x32.png')}}"
+            /></a>
             <span></span>
             <a href="#" data-target="mobile-nav" class="sidenav-trigger"
               ><i class="material-icons">menu</i></a
@@ -67,13 +68,19 @@
               <li class="active">
                 <a href="{{url_for('the_band_room')}}">Get Started</a>
               </li>
-              <li><a href="#!" data-target="login_user_modal">Login</a></li>
+              <li>
+                <a href="#" class="modal-trigger" data-target="login_user_modal"
+                  >Login</a
+                >
+              </li>
               <li><a href="{{url_for('browse_rooms')}}">Rooms</a></li>
+              {% if 'username' in session %}
               <li>
                 <a href="{{url_for('logout')}}"
                   >logout {{session['username']}}</a
                 >
               </li>
+              {% endif %}
             </ul>
           </div>
         </nav>
@@ -94,7 +101,9 @@
       <div class="container minimum-content-height">
         {% block content %} {% endblock %}
       </div>
-      {% block wide %} {% endblock %}
+      {% block wide %} {% endblock %} {% include 'components/registerform.html'
+      %} {% include 'components/createroomform.html' %} {% include
+      'components/loginform.html' %}
     </main>
     <footer class="page-footer orange">
       <div class="footer-copyright">
@@ -107,23 +116,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
-      $(document).ready(function () {
-        $(".modal").modal();
-        $(".sidenav").sidenav();
-      });
+            $(document).ready(function() {
+              $(".modal").modal();
+              $(".sidenav").sidenav();
+              $(".dropdown-trigger").dropdown();
+            });
 
-      $("#register_show_password").click(function () {
-        showPwd();
-      });
+          <!-- Show or Hide the password-->
+            $("#register_show_password").click(function() {
+              showPwd();
+            });
 
-      function showPwd() {
-        let x = document.getElementById("user_key");
-        if (x.type === "password") {
-          x.type = "text";
-        } else {
-          x.type = "password";
-        }
-      }
+            function showPwd() {
+              let pwd = document.getElementById("user_key");
+              if (pwd.type === "password") {
+                pwd.type = "text";
+              } else {
+                pwd.type = "password";
+              }
+            }
+
+            <!-- Compare both passwords on register page-->
+              function comparePassword(){
+              let passwordsMatch = false;
+              let pwd1 = $("#user_key").val()
+              let pwd2 = $("#user_key_check").val()
+              if(pwd1 == pwd2){
+                  $("#password_confirm").text(`Passwords match!`);
+                  $("#register_user_button").removeClass("disabled");
+                  passwordsMatch = true;
+              } else {
+                  $("#password_confirm").text(`Passwords do not match!`);
+                  $("#register_user_button").addClass("disabled");
+          }
+      };
     </script>
   </body>
 </html>

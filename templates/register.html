@@ -14,13 +14,13 @@ endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
           <div class="input-field col s12">
             <i class="material-icons prefix">account_circle</i>
             <input
-              id="user_name"
-              name="user_name"
+              id="username"
+              name="username"
               type="text"
               required="required"
               class="validate"
             />
-            <label for="user_name">Username</label>
+            <label for="username">Username</label>
           </div>
         </div>
         <div class="row">
@@ -33,7 +33,7 @@ endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
             <input
               id="user_key"
               name="user_key"
-              type="text"
+              type="password"
               required="required"
               class="validate"
             />
@@ -49,9 +49,30 @@ endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
           </div>
         </div>
         <div class="row">
+          <div
+            class="input-field col s12 tooltipped"
+            data-position="top"
+            data-tooltip="Passwords must be identical"
+          >
+            <i class="material-icons prefix">lock</i>
+            <input
+              id="user_key_check"
+              name="user_key_check"
+              type="password"
+              required="required"
+              class="validate"
+              oninput="comparePassword()"
+            />
+            <label for="user_key_check">Confirm Password</label>
+            <p id="password_confirm"></p>
+          </div>
+        </div>
+        <div class="row">
           <div class="input-field col s12 text-center">
+          <p>Is this your first time?</p>
             <button
-              class="waves-effect waves-light btn-large"
+              id="register_user_button"
+              class="waves-effect waves-light btn-large disabled teal lighten-3 black-text rounded-border"
               type="submit"
               name="action"
             >
@@ -60,13 +81,18 @@ endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
           </div>
         </div>
       </form>
-    </div>
-    <div id="message">
-      <h3>Password must contain the following:</h3>
-      <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-      <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-      <p id="number" class="invalid">A <b>number</b></p>
-      <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+       <div class="row">
+          <div class="input-field col s12 text-center">
+          <p>If you've been here before.</p>
+          <button
+              data-target="login_user_modal"
+              class="btn modal-trigger teal lighten-3 black-text rounded-border"
+            >
+              Login
+            </button>
+          </div>
+          </div>
+      
     </div>
   </div>
 </div>

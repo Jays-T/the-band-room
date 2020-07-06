@@ -9,17 +9,14 @@ head %} {{ super() }} {% endblock %} {% block content %}
       />
     </div>
     <div class="card-content text-center">
-      <a href="{{  url_for('register')  }}" class="waves-effect waves-light btn-large purple lighten-2 rounded-border"
+      <a href="{{  url_for('register')  }}" class="waves-effect waves-light btn-large teal lighten-3 black-text rounded-border"
         >Get Started</a
       >
       <p></p>
     </div>
   </div>
 </div>
-
-{% include 'components/registerform.html' %} {% include
-'components/createroomform.html' %} {% include 'components/loginform.html' %} {%
-endblock %} {% block wide %}
+{% endblock %} {% block wide %}
 <div class="section orange lighten-3">
   <div class="container text-center">
     <div class="flex-row">
