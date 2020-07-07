@@ -2,13 +2,13 @@
 head %} {{ super() }} {% endblock %} {% block content %}
 <div class="container text-center">
 <h3>Welcome <br />to <br />The Band Room</h3>
-  <div class="card text-left">
+  <div class="card text-left less-rounded">
     <div class="card-image waves-effect waves-block waves-light">
       <img
         src="{{  url_for('static', filename='assets/images/rock-musicians-480x300.png')  }}"
       />
     </div>
-    <div class="card-content text-center">
+    <div class="card-content-padding text-center">
       <a href="{{  url_for('register')  }}" class="waves-effect waves-light btn-large teal lighten-3 black-text rounded-border"
         >Get Started</a
       >

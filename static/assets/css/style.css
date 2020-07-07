@@ -51,6 +51,22 @@
       border-radius: 10px 60px 10px;
   }
 
+  .less-rounded {
+      border-radius: 10px;
+  }
+
+ .rounded-bottom {
+      border-radius: 0px 0px 10px 10px;
+  }
+
+  .rounded-top {
+      border-radius: 10px 10px 0px 0px;
+  }
+
+  .card-content-padding {
+      padding: 24px;
+  }
+
   .username-style {
       color: orange;
   }

@@ -54,7 +54,7 @@
   <body>
     <header>
       <div class="navbar-fixed">
-        <nav class="orange">
+        <nav class="orange rounded-bottom">
           <div class="nav-wrapper container orange">
             <a href="{{url_for('the_band_room')}}" class="brand-logo"
               ><img
@@ -117,18 +117,18 @@
     </header>
     <main>
       {% for category, message in get_flashed_messages(with_categories=True) %}
-      <div class="container alert-{{category}}">
+      <div class="container alert-{{category}} rounded-border text-center">
         The Band Room Says: {{ message }}
       </div>
       {% endfor %}
       <div class="container minimum-content-height">
         {% block content %} {% endblock %}
       </div>
-      <div class="section orange lighten-3">
+      <div class="section orange lighten-3 less-rounded">
         <div class="container text-center">
           <div class="flex-row">
-            <div class="card">
-              <div class="card-content orange">
+            <div class="card less-rounded">
+              <div class="card-content-padding orange rounded-top">
                 <h5>The Band Room is a place where you can....</h5>
               </div>
               <div class="card-tabs">
@@ -144,7 +144,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="card-content orange">
+              <div class="card-content-padding orange rounded-bottom">
                 <div id="plan">
                   Plan a Jam, a rehearsal or even a Pizza Party. Use the
                   calendar to set a date and time.
@@ -191,7 +191,7 @@
       </div>
  {% include 'components/loginform.html' %}
     </main>
-    <footer class="page-footer orange">
+    <footer class="page-footer orange rounded-top">
       <div class="footer-copyright">
         <div class="container">
           © 2020 The Band Room - By Jays-T

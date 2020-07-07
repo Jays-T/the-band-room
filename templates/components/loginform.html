@@ -1,10 +1,9 @@
 <!-- register form modal -->
-<div id="login_user_modal" class="modal minimum-content-height">
+<div id="login_user_modal" class="modal minimum-content-height less-rounded">
   <form
     id="login-form"
     action="{{ url_for('login') }}"
     method="POST"
-    class="col s12"
   >
     <div class="modal-content">
       <div class="row">
@@ -21,9 +20,7 @@
         </div>
       </div>
       <div class="row">
-        <div
-          class="input-field col s12 tooltipped"
-        >
+        <div class="input-field col s12">
           <i class="material-icons prefix">lock</i>
           <input
             id="user_key"
@@ -35,8 +32,6 @@
           <label for="user_key">Password</label>
         </div>
       </div>
-    </div>
-    <div class="modal-footer">
       <div class="row">
         <div class="input-field col s12 text-center">
           <button
@@ -48,9 +43,13 @@
           </button>
         </div>
       </div>
+    </div>
+    <div class="row">
+    <div class="modal-footer col s12">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat"
         >Close</a
       >
+    </div>
     </div>
   </form>
 </div>
