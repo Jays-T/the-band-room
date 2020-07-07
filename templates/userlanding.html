@@ -1,5 +1,12 @@
 {% extends 'base.html' %}{% block title %}Add a band room{% endblock %}{% block
 head %} {{ super() }} {% endblock %} {% block content %}
-<p>HELLO: {{session['username']}}</p>
+<div class="container flex-row">
+<p>HELLO: {{session['username']}}, welcome to The Band Room</p>
+<div class="card">
+    <div class="card-content">
+    </div>
+    </div>
+</div>
+
 
 {% endblock %}

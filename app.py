@@ -57,6 +57,9 @@ def login():
     flash('Invalid Username', 'error')
 
 
+@app.route
+
+
 @app.route('/register')
 def register():
     return render_template('register.html')

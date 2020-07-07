@@ -60,37 +60,43 @@
               ><img
                 src="{{url_for('static', filename='assets/images/the-band-room-icon-32x32.png')}}"
             /></a>
-            <span></span>
-            <a href="#" data-target="mobile-nav" class="sidenav-trigger"
+            <a href="" data-target="mobile-nav" class="sidenav-trigger" id="side-nav-show"
               ><i class="material-icons">menu</i></a
             >
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li class="active">
-                <a href="{{url_for('the_band_room')}}">Get Started</a>
+                <a href="{{url_for('register')}}">Get Started</a>
               </li>
+              <li><a href="{{url_for('browse_rooms')}}">Browse Rooms</a></li>
+              {% if 'username' in session %}
+              <li
+                class="tooltipped"
+                data-position="bottom"
+                data-tooltip="Log Out: {{session['username']}}"
+              >
+                <a href="{{url_for('logout')}}">Log Out</a>
+              </li>
+              {% else %}
               <li>
                 <a href="" data-target="login_user_modal" class="modal-trigger"
-                  >Login</a
-                >
-              </li>
-              <li><a href="{{url_for('browse_rooms')}}">Rooms</a></li>
-              {% if 'username' in session %}
-              <li>
-                <a href="{{url_for('logout')}}"
-                  >logout {{session['username']}}</a
+                  >Log In</a
                 >
               </li>
               {% endif %}
             </ul>
           </div>
         </nav>
-      </div>
 
-      <ul class="sidenav" id="mobile-nav">
-        <li><a href="{{url_for('the_band_room')}}">Get Started</a></li>
-        <li><a href="{{url_for('browse_rooms')}}">Rooms</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+      </div>
+              <ul class="sidenav" id="mobile-nav">
+          <li><a href="{{url_for('register')}}">Get Started</a></li>
+          <li><a href="{{url_for('browse_rooms')}}">Rooms</a></li>
+          <li>
+            <a href="" data-target="login_user_modal" class="modal-trigger"
+              >Log In</a
+            >
+          </li>
+        </ul>
     </header>
     <main>
       {% for category, message in get_flashed_messages(with_categories=True) %}
