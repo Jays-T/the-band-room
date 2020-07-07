@@ -22,8 +22,18 @@ head %} {{ super() }} {% endblock %} {% block content %}
       </ul>
     </div>
     <div class="card-content-padding grey lighten-4 rounded-bottom">
-      <div id="browse">Browse other Band Rooms</div>
-      <div id="create">Create Your Band Room</div>
+      <div id="browse"><button class="btn less-rounded teal lighten-2 text-black">
+          <a class="text-black" href="{{ url_for('browse_rooms') }}">
+            Browse other Band Rooms
+          </a>
+      </button></div>
+      <div id="create">  {% if 'username' in session %}
+      <button class="btn less-rounded teal lighten-2 text-black">
+          <a class="text-black" href="{{ url_for('create_room') }}">
+            Create Your Band Room
+          </a>
+      </button>
+    {% endif %} </div>
       <div id="jam">
         <p>Coming soon...</p>
         <p>Schedule a Jam session and invite your band mates</p>

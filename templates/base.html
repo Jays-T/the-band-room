@@ -129,7 +129,9 @@
         {% block content %} {% endblock %}
       </div>
 
+    <!--included components-->
       {% include 'components/loginform.html' %}
+
     </main>
     <footer class="page-footer orange rounded-top">
       <div class="footer-copyright">
@@ -147,11 +149,14 @@
     ></script>
 
     <script>
+    <!--Ready functions from Materialize-->
             $(document).ready(function() {
               $(".modal").modal();
               $(".sidenav").sidenav();
               $(".dropdown-trigger").dropdown();
             });
+
+    <!---Register form Password functions-->
 
           <!-- Show or Hide the password-->
             $("#register_show_password").click(function() {

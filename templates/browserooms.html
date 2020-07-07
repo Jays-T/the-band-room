@@ -2,20 +2,6 @@
 head %} {{ super() }} {% endblock %} {% block content %}
 <div class="container flex-row">
   <div class="row">
-  {% if 'username' in session %}
-    <div class="col s12 m4">
-      <div class="card rounded-border green lighten-2">
-        <div class="avatar">
-        </div>
-        <div class="card-content">
-        <i class="material-icons circle">add</i>
-          <a href="{{ url_for('create_room') }}">
-            Create Room
-          </a>
-        </div>
-      </div>
-    </div>
-    {% endif %}
     {% for room in band_rooms %}
     <div class="col s12 m4">
       <div class="card less-rounded">
