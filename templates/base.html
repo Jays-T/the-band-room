@@ -8,6 +8,10 @@
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
     <link
+      rel="manifest"
+      href="{{url_for('static', filename='favicon/site.webmanifest')}}"
+    />
+    <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="{{url_for('static', filename='favicon/apple-touch-icon.png')}}"
@@ -24,10 +28,7 @@
       sizes="16x16"
       href="{{url_for('static', filename='favicon/favicon-16x16.png')}}"
     />
-    <link
-      rel="manifest"
-      href="{{url_for('static', filename='favicon/site.webmanifest')}}"
-    />
+
     <link
       rel="mask-icon"
       href="{{url_for('static', filename='favicon/safari-pinned-tab.svg')}}"
@@ -68,12 +69,47 @@
               ><i class="material-icons">menu</i></a
             >
             <ul id="nav-mobile" class="right hide-on-med-and-down">
+              {% if '/the_band_room' == request.path %}
               <li class="active">
+                {% elif '/register' == request.path %}
+              </li>
+
+              <li class="active">
+                {% else %}
+              </li>
+
+              <li>
+                {% endif %}
                 <a href="{{url_for('register')}}">Get Started</a>
               </li>
-              <li><a href="{{url_for('browse_rooms')}}">Browse Rooms</a></li>
-              {% if 'username' in session %}
-              <li><a href="{{url_for('user_landing')}}">My Area</a></li>
+              {% if '/browse_rooms' == request.path %}
+              <li class="active">
+                {% else %}
+              </li>
+
+              <li>
+                {% endif %}
+                <a href="{{url_for('browse_rooms')}}">Browse Rooms</a>
+              </li>
+              {% if 'username' in session %} {% if '/user_landing' ==
+              request.path %}
+              <li class="active">
+                {% else %}
+              </li>
+
+              <li>
+                {% endif %}
+                <a href="{{url_for('user_landing')}}">My Area</a>
+              </li>
+              {% if '/create_room' == request.path %}
+              <li class="active">
+                {% else %}
+              </li>
+
+              <li>
+                {% endif %}
+                <a href="{{url_for('create_room')}}">Create Room</a>
+              </li>
               <li
                 class="tooltipped"
                 data-position="bottom"
@@ -97,7 +133,7 @@
           ><img
             src="{{url_for('static', filename='assets/images/the-band-room-icon-32x32.png')}}"
         /></a>
-        <li class="active">
+        <li class="">
           <a href="{{url_for('register')}}">Get Started</a>
         </li>
         <li><a href="{{url_for('browse_rooms')}}">Browse Rooms</a></li>
@@ -121,17 +157,20 @@
     </header>
     <main>
       {% for category, message in get_flashed_messages(with_categories=True) %}
-      <div class="container alert-{{category}} rounded-border text-center">
-        The Band Room Says: {{ message }}
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m4 alert-{{category}} lopsided-border text-center">
+            The Band Room Says: {{ message }}
+          </div>
+        </div>
       </div>
       {% endfor %}
       <div class="container blue lighten-5 minimum-content-height">
         {% block content %} {% endblock %}
       </div>
 
-    <!--included components-->
+      <!--included components-->
       {% include 'components/loginform.html' %}
-
     </main>
     <footer class="page-footer orange rounded-top">
       <div class="footer-copyright">
@@ -149,43 +188,53 @@
     ></script>
 
     <script>
-    <!--Ready functions from Materialize-->
-            $(document).ready(function() {
-              $(".modal").modal();
-              $(".sidenav").sidenav();
-              $(".dropdown-trigger").dropdown();
-            });
+          <!--Ready functions from Materialize-->
+                  $(document).ready(function() {
+                    $(".modal").modal();
+                    $(".sidenav").sidenav();
+                    $(".dropdown-trigger").dropdown();
+                  });
 
-    <!---Register form Password functions-->
+          <!---Register form Password functions-->
 
-          <!-- Show or Hide the password-->
-            $("#register_show_password").click(function() {
-              showPwd();
-            });
+                <!-- Show or Hide the password-->
+                  $("#register_show_password").click(function() {
+                    showPwd();
+                  });
 
-            function showPwd() {
-              let pwd = document.getElementById("user_key");
-              if (pwd.type === "password") {
-                pwd.type = "text";
-              } else {
-                pwd.type = "password";
-              }
-            }
+                  function showPwd() {
+                    let pwd = document.getElementById("user_key");
+                    if (pwd.type === "password") {
+                      pwd.type = "text";
+                    } else {
+                      pwd.type = "password";
+                    }
+                  }
 
-            <!-- Compare both passwords on register page-->
-              function comparePassword(){
-              let passwordsMatch = false;
-              let pwd1 = $("#user_key").val()
-              let pwd2 = $("#user_key_check").val()
-              if(pwd1 == pwd2){
-                  $("#password_confirm").text(`Passwords match!`);
-                  $("#register_user_button").removeClass("disabled");
-                  passwordsMatch = true;
-              } else {
-                  $("#password_confirm").text(`Passwords do not match!`);
-                  $("#register_user_button").addClass("disabled");
-          }
-      };
+                  <!-- Compare both passwords on register page-->
+                    function comparePassword(){
+                    let passwordsMatch = false;
+                    let pwd1 = $("#user_key").val()
+                    let pwd2 = $("#user_key_check").val()
+                    if(pwd1 == pwd2){
+                        $("#password_confirm").text(`Passwords match!`);
+                        $("#register_user_button").removeClass("disabled");
+                        passwordsMatch = true;
+                    } else {
+                        $("#password_confirm").text(`Passwords do not match!`);
+                        $("#register_user_button").addClass("disabled");
+                }
+            };
+
+            <!--Try again-->
+            jQuery(function($) {
+       var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
+       $('ul a').each(function() {
+        if (this.href === path) {
+         $(this).addClass('active');
+        }
+       });
+      });
     </script>
   </body>
 </html>
