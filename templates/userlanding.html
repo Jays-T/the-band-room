@@ -1,7 +1,7 @@
 {% extends 'base.html' %}{% block title %}Add a band room{% endblock %}{% block
 head %} {{ super() }} {% endblock %} {% block content %}
 <div class="container flex-row">
-  <div class="card text-center">
+  <div class="card text-center less-rounded">
     <div class="row">
       <div class="col s12">
         <h5>
@@ -9,7 +9,7 @@ head %} {{ super() }} {% endblock %} {% block content %}
         </h5>
       </div>
     </div>
-    <div class="card-content">
+    <div class="card-content rounded-top">
       <p>Welcome to your personal area of The Band Room.</p>
       <p>More features will be added as we develop the site, but for now...</p>
       <p>...Let's get started!</p>
@@ -18,13 +18,17 @@ head %} {{ super() }} {% endblock %} {% block content %}
       <ul class="tabs tabs-fixed-width">
         <li class="tab"><a href="#browse">Browse</a></li>
         <li class="tab"><a class="active" href="#create">Create</a></li>
-        <li class="tab"><a href="#">Test 3</a></li>
+        <li class="tab"><a href="#jam">Jam</a></li>
       </ul>
     </div>
-    <div class="card-content grey lighten-4">
+    <div class="card-content-padding grey lighten-4 rounded-bottom">
       <div id="browse">Browse other Band Rooms</div>
       <div id="create">Create Your Band Room</div>
-      <div id="test6">Test 3</div>
+      <div id="jam">
+        <p>Coming soon...</p>
+        <p>Schedule a Jam session and invite your band mates</p>
+        <p>And much more.</p>
+      </div>
     </div>
   </div>
 </div>

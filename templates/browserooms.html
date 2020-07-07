@@ -18,8 +18,8 @@ head %} {{ super() }} {% endblock %} {% block content %}
     {% endif %}
     {% for room in band_rooms %}
     <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image">
+      <div class="card less-rounded">
+        <div class="card-image rounded-top">
           <img
             src="{{  url_for('static', filename='assets/images/rock-musicians-192x192.png')  }}"
           />
@@ -31,7 +31,7 @@ head %} {{ super() }} {% endblock %} {% block content %}
               src="{{  url_for('static', filename='assets/images/door-handle-right-side-70x90.png')  }}"
           /></a>
         </div>
-        <div class="card-content">
+        <div class="card-content rounded-bottom">
           <p>
             Band: {{room.band_name}}
           </p>
