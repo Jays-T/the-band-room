@@ -93,6 +93,10 @@
         </nav>
       </div>
       <ul class="sidenav" id="mobile-nav">
+        <a href="{{url_for('the_band_room')}}" class="brand-logo"
+          ><img
+            src="{{url_for('static', filename='assets/images/the-band-room-icon-32x32.png')}}"
+        /></a>
         <li class="active">
           <a href="{{url_for('register')}}">Get Started</a>
         </li>
@@ -124,8 +128,8 @@
       <div class="container blue lighten-5 minimum-content-height">
         {% block content %} {% endblock %}
       </div>
-      
- {% include 'components/loginform.html' %}
+
+      {% include 'components/loginform.html' %}
     </main>
     <footer class="page-footer orange rounded-top">
       <div class="footer-copyright">
@@ -137,8 +141,11 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript" src="{{url_for('static', filename='vendor/js/materialize.js')}}"></script>
-    
+    <script
+      type="text/javascript"
+      src="{{url_for('static', filename='vendor/js/materialize.js')}}"
+    ></script>
+
     <script>
             $(document).ready(function() {
               $(".modal").modal();
