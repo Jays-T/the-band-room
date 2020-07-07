@@ -9,9 +9,9 @@ head %} {{ super() }} {% endblock %} {% block content %}
         </div>
         <div class="card-content">
         <i class="material-icons circle">add</i>
-          <p>
+          <a href="{{ url_for('create_room') }}">
             Create Room
-          </p>
+          </a>
         </div>
       </div>
     </div>

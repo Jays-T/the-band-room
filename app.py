@@ -96,6 +96,11 @@ def user_landing():
     return redirect(url_for('register'))
 
 
+@app.route('/create_room')
+def create_room():
+    return render_template('addbandroom.html')
+
+
 # This function adds a new band room
 @app.route('/add_room', methods=['POST'])
 def add_band_room():

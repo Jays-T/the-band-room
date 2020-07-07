@@ -1,10 +1,14 @@
-{% extends 'base.html' %}{% block title %}Add a band room{% endblock %}{% block head %}
-  {{ super() }}
-{% endblock %}
-{% block content %}
+{% extends 'base.html' %}{% block title %}Add a band room{% endblock %}{% block
+head %} {{ super() }} {% endblock %} {% block content %}
 <div class="container">
-  <h1>Welcome to The Band Room</h1>
   <div class="card">
+    <div class="row text-center">
+      <div class="col s12">
+        <h3>
+          HELLO: <span class="username-style">{{session['username']}}</span>, let's create your room.
+        </h3>
+      </div>
+    </div>
     <div class="card-image waves-effect waves-block waves-light">
       <img
         class="activator"
@@ -12,7 +16,9 @@
       />
     </div>
     <div class="card-content text-center">
-      <a class="activator waves-effect waves-light btn-large">Create your room</a>
+      <a class="activator waves-effect waves-light btn-large"
+        >Create your room</a
+      >
       <p></p>
     </div>
     <div class="card-reveal">
@@ -20,7 +26,6 @@
         >Create your room!<i class="material-icons right">close</i></span
       >
       <div class="row">
-
         <form
           id="create-room-form"
           action="{{ url_for('add_band_room') }}"
@@ -57,7 +62,7 @@
               <label for="room_key">Room Key</label>
             </div>
           </div>
-                    <div class="row">
+          <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">album</i>
               <input
@@ -70,7 +75,7 @@
               <label for="band_name">Band Name</label>
             </div>
           </div>
-            <div class="row">
+          <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">event_note</i>
               <input
@@ -83,7 +88,7 @@
               <label for="band_notes">Band Description</label>
             </div>
           </div>
-            <div class="row">
+          <div class="row">
             <div
               class="input-field col s12 tooltipped"
               data-position="top"

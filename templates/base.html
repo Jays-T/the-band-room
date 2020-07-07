@@ -94,25 +94,25 @@
       </div>
       <ul class="sidenav" id="mobile-nav">
         <li class="active">
-                <a href="{{url_for('register')}}">Get Started</a>
-              </li>
-              <li><a href="{{url_for('browse_rooms')}}">Browse Rooms</a></li>
-              {% if 'username' in session %}
-              <li><a href="{{url_for('user_landing')}}">My Area</a></li>
-              <li
-                class="tooltipped"
-                data-position="bottom"
-                data-tooltip="Log Out: {{session['username']}}"
-              >
-                <a href="{{url_for('logout')}}">Log Out</a>
-              </li>
-              {% else %}
-              <li>
-                <a href="" data-target="login_user_modal" class="modal-trigger"
-                  >Log In</a
-                >
-              </li>
-              {% endif %}
+          <a href="{{url_for('register')}}">Get Started</a>
+        </li>
+        <li><a href="{{url_for('browse_rooms')}}">Browse Rooms</a></li>
+        {% if 'username' in session %}
+        <li><a href="{{url_for('user_landing')}}">My Area</a></li>
+        <li
+          class="tooltipped"
+          data-position="bottom"
+          data-tooltip="Log Out: {{session['username']}}"
+        >
+          <a href="{{url_for('logout')}}">Log Out</a>
+        </li>
+        {% else %}
+        <li>
+          <a href="" data-target="login_user_modal" class="modal-trigger"
+            >Log In</a
+          >
+        </li>
+        {% endif %}
       </ul>
     </header>
     <main>
@@ -202,7 +202,7 @@
       </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{{url_for('static', filename='vendor/js/materialize.min.js')}}"></script>
+    <script src="{{url_for('static', filename='vendor/js/materialize.js')}}"></script>
     <script>
             $(document).ready(function() {
               $(".modal").modal();

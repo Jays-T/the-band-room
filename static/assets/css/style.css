@@ -50,4 +50,8 @@
   .rounded-border {
       border-radius: 10px 60px 10px;
   }
+
+  .username-style {
+      color: orange;
+  }
               
