@@ -57,9 +57,6 @@ def login():
     flash('Invalid Username', 'error')
 
 
-@app.route
-
-
 @app.route('/register')
 def register():
     return render_template('register.html')
@@ -94,8 +91,10 @@ def user_landing():
     if 'username' in session:
         return render_template('userlanding.html')
 
-    flash('If you do not have an account register one now - if you do have an account you can login', 'error')
+    flash('If you do not have an account register one now - \
+           if you do have an account you can login', 'error')
     return redirect(url_for('register'))
+
 
 # This function adds a new band room
 @app.route('/add_room', methods=['POST'])

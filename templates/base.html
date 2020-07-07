@@ -60,7 +60,11 @@
               ><img
                 src="{{url_for('static', filename='assets/images/the-band-room-icon-32x32.png')}}"
             /></a>
-            <a href="" data-target="mobile-nav" class="sidenav-trigger" id="side-nav-show"
+            <a
+              href=""
+              data-target="mobile-nav"
+              class="sidenav-trigger"
+              id="side-nav-show"
               ><i class="material-icons">menu</i></a
             >
             <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -69,6 +73,7 @@
               </li>
               <li><a href="{{url_for('browse_rooms')}}">Browse Rooms</a></li>
               {% if 'username' in session %}
+              <li><a href="{{url_for('user_landing')}}">My Area</a></li>
               <li
                 class="tooltipped"
                 data-position="bottom"
@@ -86,17 +91,29 @@
             </ul>
           </div>
         </nav>
-
       </div>
-              <ul class="sidenav" id="mobile-nav">
-          <li><a href="{{url_for('register')}}">Get Started</a></li>
-          <li><a href="{{url_for('browse_rooms')}}">Rooms</a></li>
-          <li>
-            <a href="" data-target="login_user_modal" class="modal-trigger"
-              >Log In</a
-            >
-          </li>
-        </ul>
+      <ul class="sidenav" id="mobile-nav">
+        <li class="active">
+                <a href="{{url_for('register')}}">Get Started</a>
+              </li>
+              <li><a href="{{url_for('browse_rooms')}}">Browse Rooms</a></li>
+              {% if 'username' in session %}
+              <li><a href="{{url_for('user_landing')}}">My Area</a></li>
+              <li
+                class="tooltipped"
+                data-position="bottom"
+                data-tooltip="Log Out: {{session['username']}}"
+              >
+                <a href="{{url_for('logout')}}">Log Out</a>
+              </li>
+              {% else %}
+              <li>
+                <a href="" data-target="login_user_modal" class="modal-trigger"
+                  >Log In</a
+                >
+              </li>
+              {% endif %}
+      </ul>
     </header>
     <main>
       {% for category, message in get_flashed_messages(with_categories=True) %}
@@ -185,7 +202,7 @@
       </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="{{url_for('static', filename='vendor/js/materialize.min.js')}}"></script>
     <script>
             $(document).ready(function() {
               $(".modal").modal();
