@@ -18,7 +18,9 @@
     <div class="card-tabs">
       <ul class="tabs tabs-fixed-width">
         <li class="tab"><a class="black-text" href="#browse">Browse</a></li>
-        <li class="tab"><a class="active black-text" href="#create">Create</a></li>
+        <li class="tab">
+          <a class="active black-text" href="#create">Create</a>
+        </li>
         <li class="tab"><a class="black-text" href="#jam">Jam</a></li>
       </ul>
     </div>
@@ -46,13 +48,14 @@
           <div class="row">
             <div class="col s12">
               <div class="card-content-padding">
-              <!--Create Room Form-->
+                <!--Create Room Form-->
                 <form
                   id="create-room-form"
                   action="{{ url_for('add_band_room') }}"
                   method="POST"
                   class="col s12"
                 >
+                  <!--Username-->
                   <div class="row">
                     <div class="input-field col s12">
                       <i class="material-icons prefix">account_circle</i>
@@ -66,6 +69,7 @@
                       <label for="owner_name">Your Name</label>
                     </div>
                   </div>
+                  <!--Room Key-->
                   <div class="row">
                     <div
                       class="input-field col s12 tooltipped"
@@ -83,6 +87,7 @@
                       <label for="room_key">Room Key</label>
                     </div>
                   </div>
+                  <!--Band Name-->
                   <div class="row">
                     <div class="input-field col s12">
                       <i class="material-icons prefix">album</i>
@@ -96,6 +101,7 @@
                       <label for="band_name">Band Name</label>
                     </div>
                   </div>
+                  <!--Band Description-->
                   <div class="row">
                     <div class="input-field col s12">
                       <i class="material-icons prefix">event_note</i>
@@ -109,6 +115,7 @@
                       <label for="band_notes">Band Description</label>
                     </div>
                   </div>
+                  <!--Link to Music-->
                   <div class="row">
                     <div
                       class="input-field col s12 tooltipped"
@@ -123,11 +130,10 @@
                         required="required"
                         class="validate"
                       />
-                      <label for="social_media"
-                        >Link to Music</label
-                      >
+                      <label for="social_media">Link to Music</label>
                     </div>
                   </div>
+                  <!--Create Room-->
                   <div class="row">
                     <div class="input-field col s12 text-center">
                       <button
@@ -164,6 +170,5 @@
     </div>
   </div>
 </div>
-
 
 {% endblock %}
