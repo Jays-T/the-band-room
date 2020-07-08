@@ -57,10 +57,19 @@
       <div class="navbar-fixed">
         <nav class="orange rounded-bottom">
           <div class="nav-wrapper container orange">
+          <!--If username in session loop for site logo-->
+          {% if 'username' in session %}
+            <a href="{{url_for('user_landing')}}" class="brand-logo"
+              ><img
+                src="{{url_for('static', filename='assets/images/the-band-room-icon-32x32.png')}}"
+            /></a>
+            {% else %}
             <a href="{{url_for('the_band_room')}}" class="brand-logo"
               ><img
                 src="{{url_for('static', filename='assets/images/the-band-room-icon-32x32.png')}}"
             /></a>
+        {% endif %}
+        <!--End of site logo if username in session loop-->
             <a
               href=""
               data-target="mobile-nav"
@@ -69,6 +78,9 @@
               ><i class="material-icons">menu</i></a
             >
             <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <!--Request path loop-->
+            <!--If username not in session loop-->
+            {% if 'username' not in session %}
               {% if '/the_band_room' == request.path %}
               <li class="active">
                 {% elif '/register' == request.path %}
@@ -80,8 +92,12 @@
 
               <li>
                 {% endif %}
+            <!--End request path loop-->
                 <a href="{{url_for('register')}}">Get Started</a>
               </li>
+              {% endif %}
+            <!--End if username not in session loop-->
+            <!--*NEW* Request path loop-->
               {% if '/browse_rooms' == request.path %}
               <li class="active">
                 {% else %}
@@ -89,8 +105,11 @@
 
               <li>
                 {% endif %}
+                <!--End request path loop-->
                 <a href="{{url_for('browse_rooms')}}">Browse Rooms</a>
               </li>
+              <!--*NEW* Request path loop-->
+              <!--If username in session loop-->
               {% if 'username' in session %} {% if '/user_landing' ==
               request.path %}
               <li class="active">
@@ -99,8 +118,10 @@
 
               <li>
                 {% endif %}
+                <!--End request path loop-->
                 <a href="{{url_for('user_landing')}}">My Area</a>
               </li>
+              <!--*NEW* Request path loop-->
               {% if '/create_room' == request.path %}
               <li class="active">
                 {% else %}
@@ -108,6 +129,7 @@
 
               <li>
                 {% endif %}
+                <!--End request path loop-->
                 <a href="{{url_for('create_room')}}">Create Room</a>
               </li>
               <li
@@ -119,11 +141,12 @@
               </li>
               {% else %}
               <li>
-                <a href="" data-target="login_user_modal" class="modal-trigger"
+                <a href="{{url_for('login_page')}}"
                   >Log In</a
                 >
               </li>
               {% endif %}
+              <!--End if username in session loop-->
             </ul>
           </div>
         </nav>

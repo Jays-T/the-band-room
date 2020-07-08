@@ -1,9 +1,9 @@
-{% extends 'base.html' %}{% block title %}Register User With The Band Room{%
+{% extends 'base.html' %}{% block title %}Register{%
 endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
 <div class="container flex-row">
-  <h3>Create your account</h3>
   <div class="card less-rounded">
-    <div class="card-content">
+    <div class="card-content text-center">
+    <h5>Create your account</h5>
       <form
         id="create-account-form"
         action="{{ url_for('register_user') }}"
@@ -84,12 +84,12 @@ endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
        <div class="row">
           <div class="input-field col s12 text-center">
           <p>If you've been here before.</p>
-          <button
-              data-target="login_user_modal"
-              class="btn modal-trigger teal lighten-3 black-text less-rounded"
+          <a
+              href="{{url_for('login_page')}}"
+              class="btn teal lighten-3 black-text less-rounded"
             >
               Login
-            </button>
+            </a>
           </div>
           </div>
       
