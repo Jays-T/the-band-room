@@ -38,6 +38,39 @@
           >
         </div>
       </div>
+      <div class="card red lighten-4">
+        <div class="card-content text-black">
+          Type in your room Key to delete the room
+
+          <form id="delete-room-form" action="{{url_for('delete_room', room_id=room._id)}}" method="POST">
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">lock</i>
+            <input
+              id="room_key"
+              name="room_key"
+              type="password"
+              required="required"
+              class="validate"
+            />
+            <label for="room_key">Room Key</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 text-center">
+            <button
+              class="waves-effect waves-light btn-large less-rounded red"
+              type="submit"
+              name="action"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </form>
+
+        </div>
+      </div>
       {% endif %}
     </div>
   </div>
