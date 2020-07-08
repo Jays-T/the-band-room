@@ -26,13 +26,11 @@ def the_band_room():
     return render_template('index.html')
 
 
+# Logout User
+# If user is logged in, terminate session.
+# If no user logged in, sent to home page.
 @app.route('/logout')
 def logout():
-    """
-    Checks if user is logged in.
-    If user is logged in, terminate session.
-    If no user logged in, sent to home page.
-    """
     if 'username' in session:
         session.pop('username')
         flash('Logged out. See you again soon', 'success')
@@ -42,26 +40,31 @@ def logout():
 # This function allows an existing user to login
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    users = mongo.db.users
-    user_login = users.find_one({'username': request.form['username']})
+    if 'username' not in session:
+        users = mongo.db.users
+        user_login = users.find_one({'username': request.form['username']})
 
-    if user_login:
-        if bcrypt.hashpw(request.form['user_key'].encode('utf-8'),
-                         user_login['user_key']) == user_login['user_key']:
-            session['username'] = request.form['username']
-            flash('Logged in. Welcome ' + session['username'], 'success')
-            return redirect(url_for('user_landing'))
+        if user_login:
+            if bcrypt.hashpw(request.form['user_key'].encode('utf-8'),
+                             user_login['user_key']) == user_login['user_key']:
+                session['username'] = request.form['username']
+                flash('Logged in. Welcome ' + session['username'], 'success')
+                return redirect(url_for('user_landing'))
 
-        flash('Invalid Username/Password combination', 'error')
-        return redirect(url_for('the_band_room'))
+            flash('Invalid Username/Password combination', 'error')
+            return redirect(url_for('login_page'))
 
-    flash('Invalid Username', 'error')
-    return redirect(url_for('the_band_room'))
+        flash('Invalid Username', 'error')
+        return redirect(url_for('login_page'))
+
+    flash('Already logged in', 'error')
+    return redirect(url_for('user_landing'))
 
 
 @app.route('/login_page')
 def login_page():
     return render_template('login.html')
+
 
 @app.route('/register')
 def register():
@@ -73,23 +76,28 @@ def register():
 # Please refer to Credits section of README.md for more info.
 @app.route('/register_user', methods=['POST', 'GET'])
 def register_user():
-    if request.method == 'POST':
-        users = mongo.db.users
-        already_user = users.find_one({'username': request.form['username']})
-        # checks users to see if username is already taken
-        if already_user is None:
-            hashpass = bcrypt.hashpw(request.form['user_key'].encode('utf-8'),
-                                     bcrypt.gensalt())
-            users.insert_one({'username': request.form['username'],
-                              'user_key': hashpass})
-            session['username'] = request.form['username']
-            flash('Account created successfully', 'success')
-            return redirect(url_for('browse_rooms'))
+    if 'username' not in session:
+        if request.method == 'POST':
+            users = mongo.db.users
+            is_user = users.find_one({'username': request.form['username']})
+            # checks users to see if username is already taken
+            if is_user is None:
+                hpass = bcrypt.hashpw(request.form['user_key'].encode('utf-8'),
+                                      bcrypt.gensalt())
+                users.insert_one({'username': request.form['username'],
+                                  'user_key': hpass})
+                session['username'] = request.form['username']
+                flash('Account created successfully', 'success')
+                return redirect(url_for('browse_rooms'))
 
-        return 'That Username already exists!'
+            flash('Sorry, that Username already exists', 'error')
+            return redirect(url_for('register'))
 
-    flash('Something went wrong', 'error')
-    return render_template('error.html')
+        flash('Something went wrong', 'error')
+        return render_template('register.html')
+
+    flash('Sorry, you cannot register a user while already logged in', 'error')
+    return redirect(url_for('user_landing'))
 
 
 @app.route('/user_landing')
