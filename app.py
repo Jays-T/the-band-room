@@ -94,7 +94,7 @@ def register_user():
                                   'user_key': hpass})
                 session['username'] = request.form['username']
                 flash('Account created successfully', 'success')
-                return redirect(url_for('browse_rooms'))
+                return redirect(url_for('user_landing'))
 
             # Error if the username is already taken
             flash('Sorry, that Username already exists', 'error')
@@ -178,10 +178,22 @@ def update_room(room_id):
 
 
 # Deletes the selected room
-@app.route('/delete_room/<room_id>')
+@app.route('/delete_room/<room_id>', methods=['POST'])
 def delete_room(room_id):
-    mongo.db.band_rooms.remove({'_id': ObjectId(room_id)})
-    return redirect(url_for('browse_rooms'))
+    if 'username' in session:
+        room_key = request.form["room_key"]
+        check_key = mongo.db.band_rooms.count_documents(({"room_key":
+                                                        room_key}))
+        if check_key:
+            mongo.db.band_rooms.remove({'_id': ObjectId(room_id)})
+            flash('Room deleted ' + session['username'], 'success')
+            return redirect(url_for('user_landing'))
+
+        flash('Thats not your room key', 'error')
+        return redirect(url_for('browse_rooms'))
+
+    flash('You must be logged in to do that', 'error')
+    return redirect(url_for('login_page'))
 
 
 if __name__ == '__main__':
