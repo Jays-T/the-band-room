@@ -1,5 +1,6 @@
 {% extends 'base.html' %}{% block title %}User Area{% endblock %}{% block head
 %} {{ super() }} {% endblock %} {% block content %}
+<!--User Area-->
 <div class="container flex-row">
   <div class="card text-center less-rounded">
     <div class="row">
@@ -21,6 +22,7 @@
         <li class="tab"><a class="black-text" href="#jam">Jam</a></li>
       </ul>
     </div>
+    <!--Browse Other Rooms-->
     <div class="card-content-padding grey lighten-4 rounded-bottom">
       <div id="browse">
         <div class="card less-rounded orange lighten-4">
@@ -37,12 +39,14 @@
           </div>
         </div>
       </div>
+      <!--Create New Band Room-->
       <div id="create">
         {% if 'username' in session %}
         <div class="card less-rounded orange lighten-4">
           <div class="row">
             <div class="col s12">
               <div class="card-content-padding">
+              <!--Create Room Form-->
                 <form
                   id="create-room-form"
                   action="{{ url_for('add_band_room') }}"
@@ -135,12 +139,14 @@
                     </div>
                   </div>
                 </form>
+                <!--End Create Room Form-->
               </div>
             </div>
           </div>
         </div>
         {% endif %}
       </div>
+      <!--Jam/Coming Soon-->
       <div id="jam">
         <div class="card less-rounded orange lighten-4">
           <div class="row">
@@ -157,19 +163,6 @@
     </div>
   </div>
 </div>
-<div class="container flex-row">
-  <div class="card less-rounded">
-    <div class="row">
-      <div class="col s6">
-        <div class="card-content text-center">
-          <h5>Future Features</h5>
-        </div>
-      </div>
-      <div class="col s6">
-        <div class="card-content text-center"><h5>Future Features</h5></div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 {% endblock %}

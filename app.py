@@ -51,21 +51,27 @@ def login():
                 flash('Logged in. Welcome ' + session['username'], 'success')
                 return redirect(url_for('user_landing'))
 
+            # Either Username and/or Password are incorrect
             flash('Invalid Username/Password combination', 'error')
             return redirect(url_for('login_page'))
 
+        # Username does not exist
         flash('Invalid Username', 'error')
         return redirect(url_for('login_page'))
 
+    # Make sure another user cannot login
+    # If a User is already in session
     flash('Already logged in', 'error')
     return redirect(url_for('user_landing'))
 
 
+# Route to login page
 @app.route('/login_page')
 def login_page():
     return render_template('login.html')
 
 
+# Route to register page
 @app.route('/register')
 def register():
     return render_template('register.html')
@@ -90,16 +96,20 @@ def register_user():
                 flash('Account created successfully', 'success')
                 return redirect(url_for('browse_rooms'))
 
+            # Error if the username is already taken
             flash('Sorry, that Username already exists', 'error')
             return redirect(url_for('register'))
 
+        # Error if the form is not posting correctly
         flash('Something went wrong', 'error')
         return render_template('register.html')
 
+    # Make sure a User cannot register while already logged in
     flash('Sorry, you cannot register a user while already logged in', 'error')
     return redirect(url_for('user_landing'))
 
 
+# Render User Area
 @app.route('/user_landing')
 def user_landing():
     if 'username' in session:
@@ -110,12 +120,7 @@ def user_landing():
     return redirect(url_for('register'))
 
 
-@app.route('/create_room')
-def create_room():
-    return render_template('addbandroom.html')
-
-
-# This function adds a new band room
+# Add a new band room
 @app.route('/add_room', methods=['POST'])
 def add_band_room():
     room_key = request.form["room_key"]
@@ -136,21 +141,21 @@ def add_band_room():
         return redirect(url_for('browse_rooms'))
 
 
-# This function displays all the rooms to the user
+# Displays all the rooms to the user
 @app.route('/browse_rooms')
 def browse_rooms():
     return render_template('browserooms.html',
                            band_rooms=mongo.db.band_rooms.find())
 
 
-# This function finds the selected room and displays the room to the user
+# Finds the selected room and displays the room to the user
 @app.route('/my_room/<room_id>')
 def my_room(room_id):
     the_room = mongo.db.band_rooms.find_one({'_id': ObjectId(room_id)})
     return render_template('bandroom.html', room=the_room)
 
 
-# This function finds the selected room
+# Finds the selected room
 # and displays the form for editing the selected room
 @app.route('/edit_room/<room_id>')
 def edit_room(room_id):
@@ -158,7 +163,7 @@ def edit_room(room_id):
     return render_template('editroom.html', room=the_room)
 
 
-# This function takes the information from the edit room
+# Takes the information from the edit room
 # form and updates the room information in the database
 @app.route('/update_room/<room_id>', methods=['POST'])
 def update_room(room_id):
@@ -172,7 +177,7 @@ def update_room(room_id):
     return redirect(url_for('browse_rooms'))
 
 
-# This function deletes the selected room
+# Deletes the selected room
 @app.route('/delete_room/<room_id>')
 def delete_room(room_id):
     mongo.db.band_rooms.remove({'_id': ObjectId(room_id)})
