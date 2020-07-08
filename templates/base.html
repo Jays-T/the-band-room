@@ -54,6 +54,7 @@
   </head>
   <body class="blue lighten-5">
     <header>
+      <!--NavBar-->
       <div class="navbar-fixed">
         <nav class="orange rounded-bottom">
           <div class="nav-wrapper container orange">
@@ -119,6 +120,7 @@
             </ul>
           </div>
         </nav>
+        <!--NavBar End-->
       </div>
       <!--Sidenav for small devices-->
       <ul class="sidenav" id="mobile-nav">
@@ -128,46 +130,43 @@
         /></a>
         <!--If username not in session loop-->
 
-              {% if 'username' not in session %}
+        {% if 'username' not in session %}
 
-              <li
-                class="{% if '/the_band_room' == request.path %} active {% elif '/register' == request.path %} active {% endif %}"
-              >
-                <a href="{{url_for('register')}}">Get Started</a>
-              </li>
-              {% endif %}
-              <!--End if username not in session loop-->
-              <li
-                class="{% if '/browse_rooms' == request.path %} active {% endif %}"
-              >
-                <a href="{{url_for('browse_rooms')}}">Browse Rooms</a>
-              </li>
-              <!--If username in session loop-->
+        <li
+          class="{% if '/the_band_room' == request.path %} active {% elif '/register' == request.path %} active {% endif %}"
+        >
+          <a href="{{url_for('register')}}">Get Started</a>
+        </li>
+        {% endif %}
+        <!--End if username not in session loop-->
+        <li class="{% if '/browse_rooms' == request.path %} active {% endif %}">
+          <a href="{{url_for('browse_rooms')}}">Browse Rooms</a>
+        </li>
+        <!--If username in session loop-->
 
-              {% if 'username' in session %}
+        {% if 'username' in session %}
 
-              <li
-                class="{% if '/user_landing' == request.path %} active {% endif %}"
-              >
-                <a href="{{url_for('user_landing')}}">My Area</a>
-              </li>
-              <li
-                class="tooltipped"
-                data-position="bottom"
-                data-tooltip="Log Out: {{session['username']}}"
-              >
-                <a href="{{url_for('logout')}}">Log Out</a>
-              </li>
-              {% else %}
-              <li>
-                <a href="{{url_for('login_page')}}">Log In</a>
-              </li>
-              {% endif %}
-              <!--End if username in session loop-->
+        <li class="{% if '/user_landing' == request.path %} active {% endif %}">
+          <a href="{{url_for('user_landing')}}">My Area</a>
+        </li>
+        <li
+          class="tooltipped"
+          data-position="bottom"
+          data-tooltip="Log Out: {{session['username']}}"
+        >
+          <a href="{{url_for('logout')}}">Log Out</a>
+        </li>
+        {% else %}
+        <li>
+          <a href="{{url_for('login_page')}}">Log In</a>
+        </li>
+        {% endif %}
+        <!--End if username in session loop-->
       </ul>
       <!--End Sidenav-->
     </header>
     <main>
+      <!--Flashed Messages-->
       {% for category, message in get_flashed_messages(with_categories=True) %}
       <div class="container">
         <div class="row">
@@ -178,12 +177,11 @@
       </div>
       {% endfor %}
       <div class="container blue lighten-5 minimum-content-height">
+        <!--Templates inserted here-->
         {% block content %} {% endblock %}
       </div>
-
-      <!--included components-->
-      {% include 'components/loginform.html' %}
     </main>
+    <!--Footer-->
     <footer class="page-footer orange rounded-top">
       <div class="footer-copyright">
         <div class="container">
