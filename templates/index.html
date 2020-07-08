@@ -4,7 +4,7 @@ super() }} {% endblock %} {% block content %}
 <div class="container text-center">
   <div class="flex-row">
     <div class="card less-rounded">
-      <div class="card-content-padding teal lighten-3 less-rounded">
+      <div class="card-content-padding orange lighten-4 less-rounded">
         <h5>Welcome to <br /></h5>
         <h4>The Band Room</h4>
       </div>
@@ -14,7 +14,7 @@ super() }} {% endblock %} {% block content %}
 <!--Hero Image Container-->
 <div class="container text-center">
   <div class="card text-left less-rounded">
-    <div class="card-image waves-effect waves-block waves-light rounded-top">
+    <div class="container card-image card-content-padding waves-effect waves-block waves-light rounded-top">
       <img
         src="{{  url_for('static', filename='assets/images/rock-musicians-480x300.png')  }}"
       />
@@ -50,18 +50,68 @@ super() }} {% endblock %} {% block content %}
             </li>
           </ul>
         </div>
-        <div class="card-content-padding orange rounded-bottom">
+        <div class="card-content-padding orange rounded-bottom text-left">
           <div id="plan">
-            Plan a Jam, a rehearsal or even a Pizza Party. Use the calendar to
-            set a date and time.
+            <ul>
+              <li><i class="material-icons">star_border</i>Plan a Jam.</li>
+              <li>
+                <i class="material-icons">star_border</i>Plan a Rehearsal.
+              </li>
+              <li>
+                <i class="material-icons">star_border</i>Plan to grab a pizza
+                with your band mates.
+              </li>
+            </ul>
+            <p>
+              Once the Calendar and Member availability Features are active,
+              making sure everyone is available a the same time will be a
+              breeze.
+            </p>
           </div>
           <div id="organize">
-            Don't waste time during the rehearsal, organize your song list, add
-            notes about the songs you are learning.
+            <p>Don't waste time during the rehearsal!</p>
+            <ul>
+              <li>
+                <i class="material-icons">star_border</i>Organize your song
+                list.
+              </li>
+              <li>
+                <i class="material-icons">star_border</i>Suggest which song to
+                focus on.
+              </li>
+              <li>
+                <i class="material-icons">star_border</i>add notes about the
+                songs you are learning.
+              </li>
+              <li>
+                <i class="material-icons">star_border</i>Show up prepared.
+              </li>
+            </ul>
+            <p>
+              Go to your local rehearsal room ready to Rock, or play some
+              Polka... if that's your thing!
+            </p>
           </div>
           <div id="share">
-            Time to share that music that you've worked so hard on with your
-            fans.
+          <p>Sharing a Pizza is nice, sharing your art through music is even better!</p>
+            <ul>
+              <li>
+                <i class="material-icons">star_border</i>Propose a date for a gig.
+              </li>
+              <li>
+                <i class="material-icons">star_border</i>See if all you band members are available.
+              </li>
+              <li>
+                <i class="material-icons">star_border</i>Check your songlist and notes.
+              </li>
+              <li>
+                <i class="material-icons">star_border</i>Show up prepared.
+              </li>
+            </ul>
+            <p>
+              Time to share that music that you've worked so hard on with your
+              fans.
+            </p>
           </div>
         </div>
       </div>
@@ -98,7 +148,9 @@ super() }} {% endblock %} {% block content %}
 </div>
 <!--Future Features-->
 <div class="container">
-  <div class="card card-content-padding orange lighten-4 less-rounded text-center">
+  <div
+    class="card card-content-padding orange lighten-4 less-rounded text-center"
+  >
     <h5>Future Features</h5>
     <p>One room to rule them all....</p>
     <div class="flex-row">
@@ -121,7 +173,9 @@ super() }} {% endblock %} {% block content %}
               <li><i class="material-icons">star_border</i>Chat</li>
               <li><i class="material-icons">star_border</i>Add Notes</li>
               <li><i class="material-icons">star_border</i>Calendar</li>
-              <li><i class="material-icons">star_border</i>Event Notifications</li>
+              <li>
+                <i class="material-icons">star_border</i>Event Notifications
+              </li>
               <li><i class="material-icons">star_border</i>Email updates</li>
             </ul>
           </div>

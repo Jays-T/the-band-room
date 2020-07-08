@@ -86,11 +86,14 @@
             >
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <!--If username not in session loop-->
-
               {% if 'username' not in session %}
-
               <li
-                class="{% if '/the_band_room' == request.path %} active {% elif '/register' == request.path %} active {% endif %}"
+                class="{% if '/the_band_room' == request.path %} active {% endif %}"
+              >
+                <a href="{{url_for('the_band_room')}}">Home</a>
+              </li>
+              <li
+                class="{% if '/register' == request.path %} active {% endif %}"
               >
                 <a href="{{url_for('register')}}">Get Started</a>
               </li>
