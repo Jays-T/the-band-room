@@ -1,5 +1,5 @@
-{% extends 'base.html' %}{% block title %}User Area{% endblock %}{% block
-head %} {{ super() }} {% endblock %} {% block content %}
+{% extends 'base.html' %}{% block title %}User Area{% endblock %}{% block head
+%} {{ super() }} {% endblock %} {% block content %}
 <div class="container flex-row">
   <div class="card text-center less-rounded">
     <div class="row">
@@ -16,28 +16,157 @@ head %} {{ super() }} {% endblock %} {% block content %}
     </div>
     <div class="card-tabs">
       <ul class="tabs tabs-fixed-width">
-        <li class="tab"><a href="#browse">Browse</a></li>
-        <li class="tab"><a class="active" href="#create">Create</a></li>
-        <li class="tab"><a href="#jam">Jam</a></li>
+        <li class="tab"><a class="black-text" href="#browse">Browse</a></li>
+        <li class="tab"><a class="active black-text" href="#create">Create</a></li>
+        <li class="tab"><a class="black-text" href="#jam">Jam</a></li>
       </ul>
     </div>
     <div class="card-content-padding grey lighten-4 rounded-bottom">
-      <div id="browse"><button class="btn less-rounded teal lighten-2 text-black">
-          <a class="text-black" href="{{ url_for('browse_rooms') }}">
-            Browse other Band Rooms
-          </a>
-      </button></div>
-      <div id="create">  {% if 'username' in session %}
-      <button class="btn less-rounded teal lighten-2 text-black">
-          <a class="text-black" href="{{ url_for('create_room') }}">
-            Create Your Band Room
-          </a>
-      </button>
-    {% endif %} </div>
+      <div id="browse">
+        <div class="card less-rounded orange lighten-4">
+          <div class="row">
+            <div class="col s12">
+              <div class="card-content">
+                <button class="btn less-rounded teal lighten-2 text-black">
+                  <a class="text-black" href="{{ url_for('browse_rooms') }}">
+                    Browse other Band Rooms
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="create">
+        {% if 'username' in session %}
+        <div class="card less-rounded orange lighten-4">
+          <div class="row">
+            <div class="col s12">
+              <div class="card-content">
+                <form
+                  id="create-room-form"
+                  action="{{ url_for('add_band_room') }}"
+                  method="POST"
+                  class="col s12"
+                >
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input
+                        id="owner_name"
+                        name="owner_name"
+                        type="text"
+                        required="required"
+                        class="validate"
+                      />
+                      <label for="owner_name">Your Name</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div
+                      class="input-field col s12 tooltipped"
+                      data-position="top"
+                      data-tooltip="This is your unique Room Key - Don't make it too simple and make sure to save and remember your Room Key"
+                    >
+                      <i class="material-icons prefix">lock</i>
+                      <input
+                        id="room_key"
+                        name="room_key"
+                        type="text"
+                        required="required"
+                        class="validate"
+                      />
+                      <label for="room_key">Room Key</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">album</i>
+                      <input
+                        id="band_name"
+                        name="band_name"
+                        type="text"
+                        required="required"
+                        class="validate"
+                      />
+                      <label for="band_name">Band Name</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">event_note</i>
+                      <input
+                        id="band_notes"
+                        name="band_notes"
+                        type="text"
+                        required="required"
+                        class="validate"
+                      />
+                      <label for="band_notes">Band Description</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div
+                      class="input-field col s12 tooltipped"
+                      data-position="top"
+                      data-tooltip="Add a link to your facebook page or soundcloud or spotify"
+                    >
+                      <i class="material-icons prefix">play_circle_outline</i>
+                      <input
+                        id="social_media"
+                        name="social_media"
+                        type="text"
+                        class="validate"
+                      />
+                      <label for="social_media"
+                        >Add a link to your bands music</label
+                      >
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12 text-center">
+                      <button
+                        class="waves-effect waves-light btn less-rounded"
+                        type="submit"
+                        name="action"
+                      >
+                        Create Your Room
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
       <div id="jam">
-        <p>Coming soon...</p>
-        <p>Schedule a Jam session and invite your band mates</p>
-        <p>And much more.</p>
+        <div class="card less-rounded orange lighten-4">
+          <div class="row">
+            <div class="col s12">
+              <div class="card-content">
+                <p>Coming soon...</p>
+                <p>Schedule a Jam session and invite your band mates</p>
+                <p>And much more.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container flex-row">
+  <div class="card less-rounded">
+    <div class="row">
+      <div class="col s6">
+        <div class="card-content text-center">
+          <h5>Future Features</h5>
+        </div>
+      </div>
+      <div class="col s6">
+        <div class="card-content text-center"><h5>Future Features</h5></div>
       </div>
     </div>
   </div>
