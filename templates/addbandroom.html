@@ -1,7 +1,7 @@
 {% extends 'base.html' %}{% block title %}Add a band room{% endblock %}{% block
 head %} {{ super() }} {% endblock %} {% block content %}
 <div class="container">
-  <div class="card">
+  <div class="card less-rounded">
     <div class="row text-center">
       <div class="col s12">
         <h3>
@@ -16,8 +16,8 @@ head %} {{ super() }} {% endblock %} {% block content %}
       />
     </div>
     <div class="card-content text-center">
-      <a class="activator waves-effect waves-light btn-large"
-        >Create your room</a
+      <a class="activator waves-effect waves-light btn"
+        >Create room</a
       >
       <p></p>
     </div>
@@ -107,11 +107,11 @@ head %} {{ super() }} {% endblock %} {% block content %}
           <div class="row">
             <div class="input-field col s12 text-center">
               <button
-                class="waves-effect waves-light btn-large"
+                class="waves-effect waves-light btn less-rounded"
                 type="submit"
                 name="action"
               >
-                Create Room
+                Create Your Room
               </button>
             </div>
           </div>

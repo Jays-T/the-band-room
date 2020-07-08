@@ -53,8 +53,10 @@ def login():
             return redirect(url_for('user_landing'))
 
         flash('Invalid Username/Password combination', 'error')
+        return redirect(url_for('the_band_room'))
 
     flash('Invalid Username', 'error')
+    return redirect(url_for('the_band_room'))
 
 
 @app.route('/register')
