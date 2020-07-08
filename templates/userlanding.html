@@ -2,7 +2,7 @@
 %} {{ super() }} {% endblock %} {% block content %}
 <!--User Area-->
 <div class="container flex-row">
-  <div class="card text-center less-rounded">
+  <div class="card text-center blue-grey darken-1 less-rounded">
     <div class="row">
       <div class="col s12">
         <h5>
@@ -17,20 +17,20 @@
     </div>
     <div class="card-tabs">
       <ul class="tabs tabs-fixed-width">
-        <li class="tab"><a class="black-text" href="#browse">Browse</a></li>
+        <li class="tab"><a class="black-text blue-grey darken-1" href="#browse">Browse</a></li>
         <li class="tab">
-          <a class="active black-text" href="#create">Create</a>
+          <a class="active black-text blue-grey darken-1" href="#create">Create</a>
         </li>
-        <li class="tab"><a class="black-text" href="#jam">Jam</a></li>
+        <li class="tab"><a class="black-text blue-grey darken-1" href="#jam">Jam</a></li>
       </ul>
     </div>
     <!--Browse Other Rooms-->
-    <div class="card-content-padding grey lighten-4 rounded-bottom">
+    <div class="card-content-padding blue-grey darken-1 rounded-bottom">
       <div id="browse">
-        <div class="card less-rounded orange lighten-4">
+        <div class="card orange lighten-4 less-rounded">
           <div class="row">
             <div class="col s12">
-              <div class="card-content">
+              <div class="card-content orange lighten-4">
                 <button class="btn less-rounded teal lighten-2 text-black">
                   <a class="text-black" href="{{ url_for('browse_rooms') }}">
                     Browse Rooms
