@@ -75,6 +75,10 @@
       color: orange;
   }
 
+  .footer-icon {
+      margin-left: 1.5rem;
+  }
+
 
 @media screen and (max-width: 768px) {
   .card-content-padding {
