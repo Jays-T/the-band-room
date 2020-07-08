@@ -35,3 +35,8 @@ function comparePassword() {
     $("#register_user_button").addClass("disabled");
   }
 }
+
+/* Show delete room form */
+$("#delete-room-btn").click(function () {
+  $("#delete-room-form").removeClass("hide");
+});
