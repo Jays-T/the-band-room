@@ -7,6 +7,14 @@ super() }} {% endblock %} {% block content %}
       <div class="card-content-padding orange lighten-4 less-rounded">
         <h5>Welcome to <br /></h5>
         <h4>The Band Room</h4>
+
+        {% if 'username' in session %}
+        <button class="btn less-rounded teal lighten-2 text-black">
+          <a class="text-black" href="{{ url_for('user_landing') }}">
+            My Area
+          </a>
+        </button>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -27,6 +35,7 @@ super() }} {% endblock %} {% block content %}
         class="waves-effect waves-light btn-large teal lighten-3 black-text less-rounded"
         >Get Started</a
       >
+      {% if 'username' not in session %}
       <p>If you already have an account you can
         <a
           href="{{url_for('login_page')}}"
@@ -35,6 +44,7 @@ super() }} {% endblock %} {% block content %}
           Log in
         </a>
       </p>
+      {% endif %}
     </div>
   </div>
 </div>

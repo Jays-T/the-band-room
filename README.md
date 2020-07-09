@@ -198,6 +198,8 @@
   2. The Input Room Key is correct.
   3. If all these steps and criteria are satisfied the app will allow the user to delete the room.
 * Matching of Username and Owner_name will be added in future to the defensive steps included in the Delete Room function.
+* Correct User Password will also be added as a security step as the room_key is not currently safe. 
+* The use of the room_key simply as a 'string' is just for CRUD function demonstration purposes
 
 * Currently on the band room page, even if the User clicks 'Cancel' on the alert asking if they are sure they want to delete the room, the delete room form will still be shown.
 * This will be fixed in upcoming versions of this site. This doesn't actually lead to the room being deleted as the User still needs to input the correct Room_key and click the red delete button.
