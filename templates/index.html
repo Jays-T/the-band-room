@@ -14,7 +14,9 @@ super() }} {% endblock %} {% block content %}
 <!--Hero Image Container-->
 <div class="container text-center">
   <div class="card text-left less-rounded">
-    <div class="container card-image card-content-padding waves-effect waves-block waves-light rounded-top">
+    <div
+      class="container card-image card-content-padding waves-effect waves-block waves-light rounded-top"
+    >
       <img
         src="{{  url_for('static', filename='assets/images/rock-musicians-480x300.png')  }}"
       />
@@ -30,117 +32,110 @@ super() }} {% endblock %} {% block content %}
   </div>
 </div>
 <!--Information Section-->
-<div class="blue lighten-5 less-rounded">
-  <div class="container text-center">
-    <div class="flex-row">
-      <div class="card less-rounded">
-        <div class="card-content-padding orange rounded-top">
-          <h5>The Band Room is a place where you will be able to....</h5>
-        </div>
-        <div class="card-tabs">
-          <ul class="tabs tabs-fixed-width orange">
-            <li class="tab">
-              <a class="active white-text" href="#plan">Plan</a>
-            </li>
-            <li class="tab">
-              <a class="white-text" href="#organize">Organize</a>
-            </li>
-            <li class="tab">
-              <a class="white-text" href="#share">Share</a>
+<div class="container text-center">
+  <div class="flex-row">
+    <div class="card less-rounded">
+      <div class="card-content-padding orange rounded-top">
+        <h5>The Band Room is a place where you will be able to....</h5>
+      </div>
+      <div class="card-tabs">
+        <ul class="tabs tabs-fixed-width orange">
+          <li class="tab">
+            <a class="active white-text" href="#plan">Plan</a>
+          </li>
+          <li class="tab">
+            <a class="white-text" href="#organize">Organize</a>
+          </li>
+          <li class="tab">
+            <a class="white-text" href="#share">Share</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-content-padding orange rounded-bottom text-left">
+        <div id="plan">
+          <ul>
+            <li><i class="material-icons">star_border</i>Plan a Jam.</li>
+            <li><i class="material-icons">star_border</i>Plan a Rehearsal.</li>
+            <li>
+              <i class="material-icons">star_border</i>Plan to grab a pizza with
+              your band mates.
             </li>
           </ul>
+          <p>
+            Once the Calendar and Member availability Features are active,
+            making sure everyone is available a the same time will be a breeze.
+          </p>
         </div>
-        <div class="card-content-padding orange rounded-bottom text-left">
-          <div id="plan">
-            <ul>
-              <li><i class="material-icons">star_border</i>Plan a Jam.</li>
-              <li>
-                <i class="material-icons">star_border</i>Plan a Rehearsal.
-              </li>
-              <li>
-                <i class="material-icons">star_border</i>Plan to grab a pizza
-                with your band mates.
-              </li>
-            </ul>
-            <p>
-              Once the Calendar and Member availability Features are active,
-              making sure everyone is available a the same time will be a
-              breeze.
-            </p>
-          </div>
-          <div id="organize">
-            <p>Don't waste time during the rehearsal!</p>
-            <ul>
-              <li>
-                <i class="material-icons">star_border</i>Organize your song
-                list.
-              </li>
-              <li>
-                <i class="material-icons">star_border</i>Suggest which song to
-                focus on.
-              </li>
-              <li>
-                <i class="material-icons">star_border</i>add notes about the
-                songs you are learning.
-              </li>
-              <li>
-                <i class="material-icons">star_border</i>Show up prepared.
-              </li>
-            </ul>
-            <p>
-              Go to your local rehearsal room ready to Rock, or play some
-              Polka... if that's your thing!
-            </p>
-          </div>
-          <div id="share">
-          <p>Sharing a Pizza is nice, sharing your art through music is even better!</p>
-            <ul>
-              <li>
-                <i class="material-icons">star_border</i>Propose a date for a gig.
-              </li>
-              <li>
-                <i class="material-icons">star_border</i>See if all you band members are available.
-              </li>
-              <li>
-                <i class="material-icons">star_border</i>Check your songlist and notes.
-              </li>
-              <li>
-                <i class="material-icons">star_border</i>Show up prepared.
-              </li>
-            </ul>
-            <p>
-              Time to share that music that you've worked so hard on with your
-              fans.
-            </p>
-          </div>
+        <div id="organize">
+          <p>Don't waste time during the rehearsal!</p>
+          <ul>
+            <li>
+              <i class="material-icons">star_border</i>Organize your song list.
+            </li>
+            <li>
+              <i class="material-icons">star_border</i>Suggest which song to
+              focus on.
+            </li>
+            <li>
+              <i class="material-icons">star_border</i>add notes about the songs
+              you are learning.
+            </li>
+            <li><i class="material-icons">star_border</i>Show up prepared.</li>
+          </ul>
+          <p>
+            Go to your local rehearsal room ready to Rock, or play some Polka...
+            if that's your thing!
+          </p>
+        </div>
+        <div id="share">
+          <p>
+            Sharing a Pizza is nice, sharing your art through music is even
+            better!
+          </p>
+          <ul>
+            <li>
+              <i class="material-icons">star_border</i>Propose a date for a gig.
+            </li>
+            <li>
+              <i class="material-icons">star_border</i>See if all you band
+              members are available.
+            </li>
+            <li>
+              <i class="material-icons">star_border</i>Check your songlist and
+              notes.
+            </li>
+            <li><i class="material-icons">star_border</i>Show up prepared.</li>
+          </ul>
+          <p>
+            Time to share that music that you've worked so hard on with your
+            fans.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </div>
 <!--Visual How To-->
-<div class="section blue lighten-5">
-  <div class="container text-center">
-    <h5>How To Get Started</h5>
-    <div class="flex-row">
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="card-panel red lighten-2 lopsided-border">
-            <i class="material-icons circle red">account_circle</i>
-            <span>Register</span>
-          </div>
+<div class="container text-center">
+  <h5>How To Get Started</h5>
+  <div class="flex-row">
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="card-panel red lighten-2 lopsided-border">
+          <i class="material-icons circle red">account_circle</i>
+          <span>Register</span>
         </div>
-        <div class="col s12 m4">
-          <div class="card-panel yellow lighten-2 lopsided-border">
-            <i class="material-icons circle yellow">add</i>
-            <span>Create</span>
-          </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card-panel yellow lighten-2 lopsided-border">
+          <i class="material-icons circle yellow">add</i>
+          <span>Create</span>
         </div>
-        <div class="col s12 m4">
-          <div class="card-panel green lighten-2 lopsided-border">
-            <i class="material-icons circle green">share</i>
-            <span>Share</span>
-          </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card-panel green lighten-2 lopsided-border">
+          <i class="material-icons circle green">share</i>
+          <span>Share</span>
         </div>
       </div>
     </div>

@@ -207,6 +207,11 @@
 * As I develop this project I will be writing better code as I learn more.
 * For now I've tried to do my best with the knowledge I have currently. 
 
+**Error Handling**
+
+* I did not setup any error handling templates, such as a 404 template etc.
+* Errors are handled using Flash messages and redirection to alternative app routes and endpoints.
+
 # Technologies
 
 * <a href="https://html.com/" target="_blank">HTML</a> - for overall UI structure
@@ -241,6 +246,14 @@
 
 * All HTML validated with <a href="https://validator.w3.org/">w3 validator</a>
 * All CSS validated with <a href="https://jigsaw.w3.org/css-validator/">w3 css validator</a>
+
+* I used various code and syntax checkers during the entire process and before project submission
+
+**Checkers Used**
+* <a href="https://extendsclass.com/python-tester.html">Python Syntax Checker</a>
+* <a href="http://pep8online.com/">Python Checker</a>
+* <a href="https://esprima.org/demo/validate.html">Esprima JavaScript Checker</a>
+* <a href="https://jshint.com/">JsHint JavaScript Checker</a>
 
 ## This site has been tested manually
 
@@ -349,7 +362,7 @@ When in the main directory enter the following into the terminal command prompt
 ## Acknowledgements
 
 ## Thank you to my mentor **@rheyannmagcalas_mentor** for helping me with suggestions on how to solve coding issues, reminding me to keep my plans realistic and giving great advice on potential features to add and on defensive design.
-## Thank you to Niel from StudenCare at Code Institute for his advice on CRUD functionality and making sure the basics are done right.
+## Thank you to Niel from StudentCare at Code Institute for his advice on CRUD functionality and making sure the basics are done right.
 ## Thank you to h4xnoodle for your advice and consistently reminding me not to overcomplicate things. 
 
 # FAIR-USE COPYRIGHT DISCLAIMER
