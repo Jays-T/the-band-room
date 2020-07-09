@@ -70,6 +70,7 @@ endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
         <div class="row">
           <div class="input-field col s12 text-center">
           <p>Is this your first time?</p>
+          <p>The register button will activate once you fill in the form.</p>
             <button
               id="register_user_button"
               class="waves-effect waves-light btn-large disabled teal lighten-3 black-text less-rounded"
@@ -83,12 +84,12 @@ endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
       </form>
        <div class="row">
           <div class="input-field col s12 text-center">
-          <p>If you've been here before.</p>
+          <p>If you already have an account.</p>
           <a
               href="{{url_for('login_page')}}"
               class="btn teal lighten-3 black-text less-rounded"
             >
-              Login
+              Log in
             </a>
           </div>
           </div>

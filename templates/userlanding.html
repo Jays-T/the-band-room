@@ -1,17 +1,21 @@
 {% extends 'base.html' %}{% block title %}User Area{% endblock %}{% block head
 %} {{ super() }} {% endblock %} {% block content %}
-<!--User Area-->
-<div class="container flex-row">
-  <div class="card text-center blue-grey darken-1 less-rounded">
-    <div class="row">
-      <div class="col s12">
+<div class="container text-center">
+  <div class="flex-row">
+    <div class="card less-rounded">
+      <div class="card-content-padding orange lighten-4 less-rounded">
         <h5>
           HELLO: <span class="username-style">{{session['username']}}</span>
         </h5>
+        <p>Welcome to your personal area of The Band Room.</p>
       </div>
     </div>
+  </div>
+</div>
+<!--User Area-->
+<div class="container flex-row">
+  <div class="card text-center blue-grey darken-1 less-rounded">
     <div class="card-content rounded-top">
-      <p>Welcome to your personal area of The Band Room.</p>
       <p>More features will be added as we develop the site, but for now...</p>
       <p>...Let's get started!</p>
     </div>

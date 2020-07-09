@@ -1,5 +1,14 @@
 {% extends 'base.html' %}{% block title %}Browse Rooms{% endblock %}{% block
 head %} {{ super() }} {% endblock %} {% block content %}
+<div class="container text-center">
+  <div class="flex-row">
+    <div class="card less-rounded">
+      <div class="card-content-padding orange lighten-4 less-rounded">
+        <h5>Browse Rooms</h5>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container flex-row">
   <div class="row">
     {% for room in band_rooms %}

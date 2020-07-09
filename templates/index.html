@@ -27,7 +27,14 @@ super() }} {% endblock %} {% block content %}
         class="waves-effect waves-light btn-large teal lighten-3 black-text less-rounded"
         >Get Started</a
       >
-      <p></p>
+      <p>If you already have an account you can
+        <a
+          href="{{url_for('login_page')}}"
+          class="btn teal lighten-3 black-text less-rounded"
+        >
+          Log in
+        </a>
+      </p>
     </div>
   </div>
 </div>

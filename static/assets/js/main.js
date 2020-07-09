@@ -1,12 +1,15 @@
 /* Ready functions from Materialize */
+
 $(document).ready(function () {
+    /* to show/hide sidenav on smaller devices */
   $(".sidenav").sidenav();
-  $(".dropdown-trigger").dropdown();
+   /* to stop the counter showing on each form input */
+  $(".character-counter").hide();
 });
 
 /* Register form Password functions */
 
-/* Show or Hide the password */
+/* Toggle Show or Hide the password */
 $("#register_show_password").click(function () {
   showPwd();
 });
@@ -21,6 +24,7 @@ function showPwd() {
 }
 
 /* Compare both passwords on register page */
+
 function comparePassword() {
   let passwordsMatch = false;
   let pwd1 = $("#user_key").val();
@@ -36,6 +40,7 @@ function comparePassword() {
 }
 
 /* Show delete room form */
+
 $("#delete-room-btn").click(function () {
   $("#delete-room-form").removeClass("hide");
 });
