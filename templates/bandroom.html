@@ -37,7 +37,10 @@
             >
           </p>
           <!--Band Description-->
-          <p>About the band: <span class="username-style">{{room.band_notes}}</span></p>
+          <p>
+            About the band:
+            <span class="username-style">{{room.band_notes}}</span>
+          </p>
         </div>
       </div>
       <!--Edit / Delete Room buttons-->
@@ -103,12 +106,10 @@
             <div class="col s4 m4 text-black">
               <a
                 href="{{ url_for('browse_rooms') }}"
-                class="less-rounded right halfway-fab waves-effect waves-light tooltipped"
+                class="less-rounded right halfway-fab waves-effect waves-light tooltipped doorhandle"
                 data-position="bottom"
                 data-tooltip="Leave Room"
-                ><img
-                  src="{{  url_for('static', filename='assets/images/door-handle-right-side-70x90.png')  }}"
-              /></a>
+              ></a>
             </div>
           </div>
         </div>

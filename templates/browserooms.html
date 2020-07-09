@@ -7,10 +7,10 @@ head %} {{ super() }} {% endblock %} {% block content %}
         <h5>Browse Rooms</h5>
         {% if 'username' in session %}
         <button class="btn less-rounded teal lighten-2 text-black">
-                  <a class="text-black" href="{{ url_for('user_landing') }}">
-                    My Area
-                  </a>
-                </button>
+          <a class="text-black" href="{{ url_for('user_landing') }}">
+            My Area
+          </a>
+        </button>
         {% endif %}
       </div>
     </div>
@@ -25,27 +25,33 @@ head %} {{ super() }} {% endblock %} {% block content %}
           <img
             src="{{  url_for('static', filename='assets/images/rock-musicians-192x192.png')  }}"
           />
-          
         </div>
         <div class="card-content rounded-bottom">
-        <div class="row">
-        <div class="col s8 m8"><p>
-            Room Owner: <span class="username-style">{{room.owner_name}}</span>
-          </p>
-          <p>Band: <span class="username-style">{{room.band_name}}</span></p></div>
-            <div class="col s4 m4"><a
-            href="{{ url_for('my_room', room_id=room._id) }}"
-            class="less-rounded right halfway-fab waves-effect waves-light tooltipped"
-            data-position="bottom"
-            data-tooltip="Open Room"
-            ><img
-              src="{{  url_for('static', filename='assets/images/door-handle-right-side-70x90.png')  }}"
-          /></a></div>
+          <div class="row">
+            <div class="col s8 m8">
+              <p>
+                Room Owner:
+                <span class="username-style">{{room.owner_name}}</span>
+              </p>
+              <p>
+                Band: <span class="username-style">{{room.band_name}}</span>
+              </p>
+            </div>
+            <div class="col s4 m4">
+              <a
+                href="{{ url_for('my_room', room_id=room._id) }}"
+                class="less-rounded right halfway-fab waves-effect waves-light tooltipped doorhandle"
+                data-position="bottom"
+                data-tooltip="Open Room"
+              >
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
 
-{% endblock %}
+  {% endblock %}
+</div>

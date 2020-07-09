@@ -1,92 +1,107 @@
-  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-  body, button {
-    font-family: 'Roboto Condensed', sans-serif;
-    letter-spacing: 0.1em;
-  }
-  
-  .band-room-style {
-      font-family: 'Kaushan Script', 'cursive';
-  }
+body,
+button {
+  font-family: "Roboto Condensed", sans-serif;
+  letter-spacing: 0.1em;
+}
 
-  .username-style {
-      color: rgb(255, 145, 0);
-  }
- 
-  main {
-    flex: 1 0 auto;
-  }
+.band-room-style {
+  font-family: "Kaushan Script", "cursive";
+}
 
-  .flex-row {
-      justify-content: space-evenly;
-      flex-flow: column wrap;
-  }
+.username-style {
+  color: rgb(255, 145, 0);
+}
 
-  .minimum-content-height {
-      min-height: 60vh;
-  }
+main {
+  flex: 1 0 auto;
+}
 
-  .text-center {
-      text-align: center;
-  }
+.flex-row {
+  justify-content: space-evenly;
+  flex-flow: column wrap;
+}
 
-  .text-left {
-      text-align: left;
-  }
+.minimum-content-height {
+  min-height: 60vh;
+}
 
-  .alert-error {
-      background-color: red;
-      color: white;
-  }
+.text-center {
+  text-align: center;
+}
 
-  .alert-success {
-      background-color: green;
-      color: white;
-  }
+.text-left {
+  text-align: left;
+}
 
-  .btn-small {
-      height: 24px;
-      width: 60px;
-      line-height: 24px;
-      margin: 5px 5px;
-      padding: 0 0.5em;
-  }
+.alert-error {
+  background-color: red;
+  color: white;
+}
 
-  .text-black {
-      color: #111111;
-  }
+.alert-success {
+  background-color: green;
+  color: white;
+}
 
-  .lopsided-border {
-      border-radius: 10px 60px 10px;
-  }
+.btn-small {
+  height: 24px;
+  width: 60px;
+  line-height: 24px;
+  margin: 5px 5px;
+  padding: 0 0.5em;
+}
 
-  .less-rounded {
-      border-radius: 10px;
-  }
+.text-black {
+  color: #111111;
+}
 
- .rounded-bottom {
-      border-radius: 0px 0px 10px 10px;
-  }
+.lopsided-border {
+  border-radius: 10px 60px 10px;
+}
 
-  .rounded-top {
-      border-radius: 10px 10px 0px 0px;
-  }
+.less-rounded {
+  border-radius: 10px;
+}
 
-  .card-content-padding {
-      padding: 1.5rem;
-  }
+.rounded-bottom {
+  border-radius: 0px 0px 10px 10px;
+}
 
-  .footer-icon {
-      margin-left: 1.5rem;
-  }
+.rounded-top {
+  border-radius: 10px 10px 0px 0px;
+}
 
+.card-content-padding {
+  padding: 1.5rem;
+}
+
+.footer-icon {
+  margin-left: 1.5rem;
+}
+
+.doorhandle {
+  background-image: url("/static/assets/images/door-handle-right-side-70x90.png");
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 90px;
+}
 
 @media screen and (max-width: 768px) {
   .card-content-padding {
-      padding: .50rem;
-  }  
+    padding: 0.5rem;
+  }
+
+  .doorhandle {
+  background-image: url("/static/assets/images/door-handle-right-side-35x45.png");
+  background-repeat: no-repeat;
+  width: 35px;
+  height: 45px;
+  margin-top: 50%;
+}
 }
