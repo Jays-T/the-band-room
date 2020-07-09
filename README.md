@@ -67,7 +67,7 @@
 
 # Structure
 
-<img src="/wireframes/bandroom-site-structure-380x463.png"/>
+<img src="/wireframes/bandroom-site-structure-566x459.png"/>
 
 # User Interface
 
