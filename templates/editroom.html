@@ -10,109 +10,115 @@
   </div>
 </div>
 <div class="container">
-  <form
-    id="edit-room-form"
-    action="{{ url_for('update_room', room_id=room._id) }}"
-    method="POST"
-    class="col s12"
-  >
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="material-icons prefix">account_circle</i>
-        <input
-          id="owner_name"
-          name="owner_name"
-          type="text"
-          required="required"
-          class="validate"
-        />
-        <label for="owner_name">Your Name</label>
-      </div>
-    </div>
-    <div class="row">
-      <div
-        class="input-field col s12 tooltipped"
-        data-position="top"
-        data-tooltip="This is your unique Room Key - You'll need to enter it correctly to edit the room"
-      >
-        <i class="material-icons prefix">lock</i>
-        <input
-          id="room_key"
-          name="room_key"
-          type="text"
-          required="required"
-          class="validate"
-        />
-        <label for="room_key">Room Key</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="material-icons prefix">album</i>
-        <input
-          id="band_name"
-          name="band_name"
-          type="text"
-          required="required"
-          class="validate"
-        />
-        <label for="band_name">{{room.band_name}}</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="material-icons prefix">event_note</i>
-        <input
-          id="band_notes"
-          name="band_notes"
-          type="text"
-          required="required"
-          class="validate"
-        />
-        <label for="band_notes">{{room.band_notes}}</label>
-      </div>
-    </div>
-    <div class="row">
-      <div
-        class="input-field col s12 tooltipped"
-        data-position="top"
-        data-tooltip="Add a link to your spotify"
-      >
-        <i class="material-icons prefix">play_circle_outline</i>
-        <input
-          id="social_media"
-          name="social_media"
-          type="text"
-          class="validate"
-          required="required"
-        />
-        <label for="social_media">{{room.social_media}}</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s12 text-center">
-        <button
-          class="waves-effect waves-light btn-large tooltipped"
-          data-position="top"
-          data-tooltip="Submit edits"
-          type="submit"
-          name="action"
+  <div class="flex-row">
+    <div class="card less-rounded">
+      <div class="card-content-padding orange lighten-4 less-rounded">
+        <form
+          id="edit-room-form"
+          action="{{ url_for('update_room', room_id=room._id) }}"
+          method="POST"
+          class="col s12"
         >
-          Edit Room
-        </button>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">account_circle</i>
+              <input
+                id="owner_name"
+                name="owner_name"
+                type="text"
+                required="required"
+                class="validate"
+              />
+              <label for="owner_name">Your Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="input-field col s12 tooltipped"
+              data-position="top"
+              data-tooltip="This is your unique Room Key - You'll need to enter it correctly to edit the room"
+            >
+              <i class="material-icons prefix">lock</i>
+              <input
+                id="room_key"
+                name="room_key"
+                type="text"
+                required="required"
+                class="validate"
+              />
+              <label for="room_key">Room Key</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">album</i>
+              <input
+                id="band_name"
+                name="band_name"
+                type="text"
+                required="required"
+                class="validate"
+              />
+              <label for="band_name">{{room.band_name}}</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">event_note</i>
+              <input
+                id="band_notes"
+                name="band_notes"
+                type="text"
+                required="required"
+                class="validate"
+              />
+              <label for="band_notes">{{room.band_notes}}</label>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="input-field col s12 tooltipped"
+              data-position="top"
+              data-tooltip="Add a link to your spotify"
+            >
+              <i class="material-icons prefix">play_circle_outline</i>
+              <input
+                id="social_media"
+                name="social_media"
+                type="text"
+                class="validate"
+                required="required"
+              />
+              <label for="social_media">{{room.social_media}}</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 text-center">
+              <button
+                class="waves-effect waves-light btn-large tooltipped"
+                data-position="top"
+                data-tooltip="Submit edits"
+                type="submit"
+                name="action"
+              >
+                Edit Room
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 text-center">
+              <a
+                href="{{ url_for('my_room', room_id=room._id) }}"
+                class="btn less-rounded halfway-fab waves-effect waves-light tooltipped"
+                data-position="bottom"
+                data-tooltip="Back to room"
+                >Cancel</a
+              >
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-    <div class="row">
-      <div class="col s12 text-center">
-        <a
-          href="{{ url_for('my_room', room_id=room._id) }}"
-          class="btn less-rounded halfway-fab waves-effect waves-light tooltipped"
-          data-position="bottom"
-          data-tooltip="Back to room"
-          >Cancel</a
-        >
-      </div>
-    </div>
-  </form>
+  </div>
 </div>
 {% endblock %}
