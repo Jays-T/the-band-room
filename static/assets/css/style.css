@@ -5,10 +5,18 @@
   }
 
   body, button {
-    font-family: 'Bangers', cursive;
+    font-family: 'Roboto Condensed', sans-serif;
     letter-spacing: 0.1em;
   }
   
+  .band-room-style {
+      font-family: 'Kaushan Script', 'cursive';
+  }
+
+  .username-style {
+      color: rgb(255, 145, 0);
+  }
+ 
   main {
     flex: 1 0 auto;
   }
@@ -70,10 +78,6 @@
 
   .card-content-padding {
       padding: 1.5rem;
-  }
-
-  .username-style {
-      color: rgb(255, 145, 0);
   }
 
   .footer-icon {

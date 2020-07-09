@@ -83,8 +83,9 @@
 
 * Fonts
 
-* I chose a single font which I felt matched well with the intended 'fun' feel of the site:
-  * <a href="https://fonts.google.com/specimen/Bangers/" target="_blank">Bangers</a> 
+  * <a href="https://fonts.google.com/specimen/Kaushan+Script" target="_blank">Kaushan Script</a> - For the favicon, site icon and 'The Band Room' instances in the text and for the Username displayed on the My Area page
+  * <a href="https://fonts.google.com/specimen/Roboto+Condensed" target="_blank">Roboto Condensed</a> - For the rest of the site - I chose this font for it's clean and lean appearance
+  
 
 * Pagination
  * Certain areas of the site, such as the browse_rooms area will require pagination and I plan to implement this in future to prevent incessantly long scrolling pages.

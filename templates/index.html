@@ -6,7 +6,7 @@ super() }} {% endblock %} {% block content %}
     <div class="card less-rounded">
       <div class="card-content-padding orange lighten-4 less-rounded">
         <h5>Welcome to <br /></h5>
-        <h4>The Band Room</h4>
+        <h4 class="band-room-style">The Band Room</h4>
 
         {% if 'username' in session %}
         <button class="btn less-rounded teal lighten-2 text-black">
@@ -53,7 +53,7 @@ super() }} {% endblock %} {% block content %}
   <div class="flex-row">
     <div class="card less-rounded">
       <div class="card-content-padding orange rounded-top">
-        <h5>The Band Room is a place where you will be able to....</h5>
+        <h5><span class="band-room-style">The Band Room</span> is a place where you will be able to....</h5>
       </div>
       <div class="card-tabs">
         <ul class="tabs tabs-fixed-width orange">

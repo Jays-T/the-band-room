@@ -49,6 +49,7 @@
       href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="{{url_for('static', filename='vendor/css/materialize.min.css')}}"
@@ -170,7 +171,7 @@
       <div class="container">
         <div class="row">
           <div class="col s12 m4 alert-{{category}} rounded-bottom text-center">
-            The Band Room Says: {{ message }}
+            <span class="band-room-style">The Band Room</span> Says: {{ message }}
           </div>
         </div>
       </div>
@@ -184,7 +185,7 @@
     <footer class="page-footer orange rounded-top">
       <div class="footer-copyright orange">
         <div class="container">
-          © 2020 The Band Room -
+          © 2020 <span class="band-room-style">The Band Room</span> -
           <a
             class="white-text tooltipped"
             data-position="top"
