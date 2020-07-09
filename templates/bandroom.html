@@ -20,19 +20,24 @@
 </div>
 <!--Band Room-->
 <div class="container flex-row">
-  <div class="row text-center">
+  <div class="row">
     <div class="col s12 m12">
       <div class="card blue-grey darken-1 less-rounded">
         <div class="card-content text-black">
           <p>
+            Room Owner:
+            <span class="username-style">{{room.owner_name}}</span>
+          </p>
+          <p>
             <!--Link to music-->
-            Listen to <span class="username-style">{{room.band_name}}</span>'s music:
+            Listen to <span class="username-style">{{room.band_name}}</span>'s
+            music:
             <a href="{{room.social_media}}" target="_blank"
               ><i class="material-icons">queue_music</i></a
             >
           </p>
           <!--Band Description-->
-          <p>{{room.band_notes}}</p>
+          <p>About the band: <span class="username-style">{{room.band_notes}}</span></p>
         </div>
       </div>
       <!--Edit / Delete Room buttons-->
@@ -94,24 +99,16 @@
       <div class="card blue-grey darken-1 less-rounded">
         <div class="card-content white-text">
           <div class="row">
-            <div class="col s4 m4">
+            <div class="col s8 m8 text-right"></div>
+            <div class="col s4 m4 text-black">
               <a
                 href="{{ url_for('browse_rooms') }}"
-                class="less-rounded left halfway-fab waves-effect waves-light tooltipped"
+                class="less-rounded right halfway-fab waves-effect waves-light tooltipped"
                 data-position="bottom"
                 data-tooltip="Leave Room"
                 ><img
-                  src="{{  url_for('static', filename='assets/images/door-handle-left-side-70x90.png')  }}"
+                  src="{{  url_for('static', filename='assets/images/door-handle-right-side-70x90.png')  }}"
               /></a>
-            </div>
-            <div class="col s8 m8 text-left text-black">
-              <p>
-                Room Owner:
-                <span class="username-style">{{room.owner_name}}</span>
-              </p>
-              <p>
-                Band: <span class="username-style">{{room.band_name}}</span>
-              </p>
             </div>
           </div>
         </div>
