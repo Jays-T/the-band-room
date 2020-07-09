@@ -67,7 +67,31 @@
 
 # Structure
 
-<a href="#">Structure</a>
+* No user Logged in:
+
+Home (/the_band_room)
+  \________Get Started
+   \             \____Register User
+    \             \___Login User
+     \_____Browse Rooms
+      \         \_____Band Room/<room_id> 
+       \___Login
+
+* With user Logged in:
+
+Home (/the_band_room)
+  \________Get Started
+   \             \____Register User
+    \             \___Login User
+     \_______Browse Rooms 
+      \         \______Band Room/<room_id>
+       \                   \______Edit Room
+        \                   \_____Delete Room
+         \___My Area      
+          \      \_____Create Room
+           \      \____Browse Rooms
+            \
+             \Logout User
 
 # User Interface
 
