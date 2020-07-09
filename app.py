@@ -70,7 +70,11 @@ def login():
 # Route to login page
 @app.route('/login_page')
 def login_page():
-    return render_template('login.html')
+    if 'username' not in session:
+        return render_template('login.html')
+
+    flash('Already logged in', 'error')
+    return redirect(url_for('user_landing'))
 
 
 # Route to register page

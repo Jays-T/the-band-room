@@ -157,6 +157,8 @@
 * The Login function is only accessible via the UI if there is no current session, no one logged in.
 * In case someone bypasses this by manually inputting the correct url route to the login page then:
 
+* If there is already a user logged in, the route to the login_page will redirect to the user_landing and flash an error message:
+
 * The Login function is designed to only allow a login if:
   1. There is no current session, no one logged in.
   2. The username exists.
