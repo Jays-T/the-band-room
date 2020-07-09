@@ -10,8 +10,10 @@ if os.path.exists('env.py'):
 app = Flask(__name__)
 
 # Environment Variables
+app.config["SECRET_KEY"] = os.getenv('SECRET_KEY')
 app.config["MONGO_DBNAME"] = 'rehearsal_room'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI')
+
 
 mongo = PyMongo(app)
 
@@ -197,8 +199,6 @@ def delete_room(room_id):
 
 
 if __name__ == '__main__':
-    app.secret_key = 'super secret key'
-
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
             debug=True)
