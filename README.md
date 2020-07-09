@@ -166,12 +166,16 @@
 
 * If there is already a user logged in, the route to the login_page will redirect to the user_landing and flash an error message:
 
+**LOGIN**
+
 * The Login function is designed to only allow a login if:
   1. There is no current session, no one logged in.
   2. The username exists.
   3. Both the username and password are correct and match each other in the database.
   4. If any of the criteria are not met, each of these safeguards will flash an error message to the user and redirect the route accordingly.
   5. If all these criteria are satisfied the app will allow the login.
+
+**REGISTER**
 
 * The Register function is only accessible via the UI if there is no current session, no one logged in.
 * In case someone bypasses this by manually inputting the correct url route to the login page then:
@@ -182,18 +186,26 @@
   4. If any of the criteria are not met, each of these safeguards will flash an error message to the user and redirect the route accordingly.
   5. If all these criteria are satisfied the app will allow the user to register.
 
+**USER AREA**
+
 * The User area is only accessible if there is a current session, if a User is logged in.
 * If there is no session, no user logged in, the app will flash an error message to the user and redirect them to the register page. I chose to redirect to the register page in case the user had no account as the links to login are also clearly visible on that page
+
+**ADD ROOM**
 
 * The Add Band Room page is only accessible via the UI if a User is in session.
 * The function will only allow a User to create a room if the room_key is unique.
 * The Add Band Room function however is not currently fully defensively designed. This is simply due to a lack of time and it is on the high priority list of next steps to take in development of this app.
+
+**EDIT ROOM**
 
 * The Edit Room function is also not currently designed with safeguards and any user who is logged in can currently edit a Room.
 * This means that any User can currently edit everything from the rooms Owner_name, the room_key etc.
 * This means that a User could use the Edit function to edit the room_key, and then use that new room_key to delete the room.
 * This will be fixed in the next iteration of this site. I have simply run out of time and am leaving it as is to demonstrate the CRUD functionality.
 * Each of the validation steps included in the Login and Register functions will be included in future in the Add Band Room and Edit Band Room functions, including checking the room_key and matching the username with the room owner_name for further validation.
+
+**DELETE ROOM**
 
 * The Delete Room function is only accessible via the UI if there is a current session, a user logged in.
 * On the band room page there is a button named 'Delete'. On clicking this button the browser will flash an alert asking if the User is sure they want to delete the room.
@@ -222,6 +234,7 @@
 **Error Handling**
 
 * I did not setup any error handling templates, such as a 404 template etc.
+* I will be implementing further error handlers/templates in subsequent versions of the app
 * Errors are handled using Flash messages and redirection to alternative app routes and endpoints.
 
 # Technologies
@@ -255,8 +268,10 @@
 * Defensive Design was tested by manually adding endpoints from areas where access should not be allowed
 * All functions were tested using bogus usernames / passwords / room keys
 * All functions were tested using correct usernames / passwords / room keys
+* Site navigation and links tested thoroughly, navigation breaks also tested using the back and forward buttons
 
 * All HTML validated with <a href="https://validator.w3.org/">w3 validator</a>
+  * The HTML validator returned errors due to the jinja templating used to structure the site
 * All CSS validated with <a href="https://jigsaw.w3.org/css-validator/">w3 css validator</a>
 
 * I used various code and syntax checkers during the entire process and before project submission
@@ -322,6 +337,8 @@ Phones tested:
    |             | ?retryWrites=true&w=majority                                                                  |
    | SECRET_KEY  | <your_secret_key>                                                                             |
    
+   9. From Heroku you can now click 'Open App'. If all steps were completed correctly the app should run successfully
+   10. You can also access your app using this url type:  https://<your app name>.herokuapp.com/<endpoint>
 
 
 ## There are no differences between the currently deployed site and the development version at this time.

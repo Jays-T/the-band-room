@@ -1,5 +1,6 @@
 {% extends 'base.html' %}{% block title %}Browse Rooms{% endblock %}{% block
 head %} {{ super() }} {% endblock %} {% block content %}
+<!--Headline-->
 <div class="container text-center">
   <div class="flex-row">
     <div class="card less-rounded">
@@ -16,6 +17,7 @@ head %} {{ super() }} {% endblock %} {% block content %}
     </div>
   </div>
 </div>
+<!--For Loop to count and display band rooms-->
 <div class="container flex-row">
   <div class="row">
     {% for room in band_rooms %}
@@ -52,6 +54,6 @@ head %} {{ super() }} {% endblock %} {% block content %}
     </div>
     {% endfor %}
   </div>
-
+<!--End of for loop-->
   {% endblock %}
 </div>

@@ -1,3 +1,11 @@
+/* Since most of the css styling was done through Materialize */
+
+/* I didn't feel the need to create too many css classes/styles */
+
+/* I created a number of classes that mostly did one thing each */
+
+/* Most of the class names are self-explanatory */
+
 body {
   display: flex;
   min-height: 100vh;

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}{% block title %}Login{%
 endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
+<!--Headline-->
 <div class="container flex-row">
   <div class="card orange lighten-4 less-rounded">
     <div class="card-content text-center">
@@ -8,6 +9,7 @@ endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
         <div class="row">
           <div class="input-field orange lighten-4 col s12">
             <i class="material-icons prefix">account_circle</i>
+            <!--Username Input-->
             <input
               id="username"
               name="username"
@@ -21,6 +23,7 @@ endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
         <div class="row">
           <div class="input-field col s12">
             <i class="material-icons prefix">lock</i>
+            <!--Password Input-->
             <input
               id="user_key"
               name="user_key"
@@ -33,6 +36,7 @@ endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
         </div>
         <div class="row">
           <div class="input-field col s12 text-center">
+          <!--Login Button-->
             <button
               class="waves-effect waves-light btn-large less-rounded black-text"
               type="submit"

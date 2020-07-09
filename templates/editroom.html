@@ -1,5 +1,6 @@
 {% extends 'base.html' %}{% block title %}Open Room{% endblock %}{% block head
 %} {{ super() }} {% endblock %} {% block content %}
+<!--Headline-->
 <div class="container text-center">
   <div class="flex-row">
     <div class="card less-rounded">
@@ -9,6 +10,7 @@
     </div>
   </div>
 </div>
+<!--Edit Room Form-->
 <div class="container">
   <div class="flex-row">
     <div class="card less-rounded">
@@ -22,6 +24,7 @@
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">account_circle</i>
+              <!--Name Input-->
               <input
                 id="owner_name"
                 name="owner_name"
@@ -39,6 +42,7 @@
               data-tooltip="This is your unique Room Key - You'll need to enter it correctly to edit the room"
             >
               <i class="material-icons prefix">lock</i>
+              <!--Room Key Input-->
               <input
                 id="room_key"
                 name="room_key"
@@ -52,6 +56,7 @@
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">album</i>
+              <!--Band Name Input-->
               <input
                 id="band_name"
                 name="band_name"
@@ -65,6 +70,7 @@
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">event_note</i>
+              <!--Band Notes/About Input-->
               <input
                 id="band_notes"
                 name="band_notes"
@@ -82,6 +88,7 @@
               data-tooltip="Add a link to your spotify"
             >
               <i class="material-icons prefix">play_circle_outline</i>
+              <!--Media Link Input-->
               <input
                 id="social_media"
                 name="social_media"
@@ -94,6 +101,7 @@
           </div>
           <div class="row">
             <div class="col s12 text-center">
+            <!--Submit Button-->
               <button
                 class="waves-effect waves-light btn-large tooltipped"
                 data-position="top"
@@ -107,6 +115,7 @@
           </div>
           <div class="row">
             <div class="col s12 text-center">
+            <!--Cancel Button-->
               <a
                 href="{{ url_for('my_room', room_id=room._id) }}"
                 class="btn less-rounded halfway-fab waves-effect waves-light tooltipped"
