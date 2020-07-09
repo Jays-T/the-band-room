@@ -348,7 +348,7 @@ When in the main directory enter the following into the terminal command prompt
 
 ## Acknowledgements
 
-## Thank you to my mentor **@rheyannmagcalas_mentor** for reminding me to keep my plans realistic and giving great advice on potential features to add and on Defensive Design.
+## Thank you to my mentor **@rheyannmagcalas_mentor** for helping me with suggestions on how to solve coding issues, reminding me to keep my plans realistic and giving great advice on potential features to add and on defensive design.
 ## Thank you to Niel from StudenCare at Code Institute for his advice on CRUD functionality and making sure the basics are done right.
 ## Thank you to h4xnoodle for your advice and consistently reminding me not to overcomplicate things. 
 
