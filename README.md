@@ -282,13 +282,14 @@ Phones tested:
    6. Login to Heroku via the terminal using Heroku Login
    7. Commit your changes using: git add and git commit -m "commit message here"
    7. Push your changes using: git push heroku master
-   8. In your Heroku Dashboard, Go to the Settings of your app and then Reveal Config Vars and set the values as follows:
+   8. In your Heroku Dashboard, Go to the Settings of your app and then Reveal Config Vars and set the values as follows (remove the spaces and '<'>'from the MONGO_URI):
 
    | KEY         | VALUE                                                                                         |
-   | :---        |                                                                                          ---: |
+   | :---        | :---                                                                                          |
    | IP          | 0.0.0.0                                                                                       | 
    | PORT        | 5000                                                                                          |
-   | MONGO_URI   | mongodb+srv://root:<password>@cluster0-r5ils.mongodb.net/<dbname>?retryWrites=true&w=majority |
+   | MONGO_URI   | mongodb+srv://root:< your password >@cluster0-r5ils.mongodb.net/< your dbname >               |
+   |             | ?retryWrites=true&w=majority                                                                  |
    | SECRET_KEY  | <your_secret_key>                                                                             |
    
 
