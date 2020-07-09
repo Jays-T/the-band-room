@@ -92,6 +92,10 @@ main {
   height: 90px;
 }
 
+.brand-logo {
+    margin-top: .45rem;
+}
+
 @media screen and (max-width: 768px) {
   .card-content-padding {
     padding: 0.5rem;
