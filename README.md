@@ -387,6 +387,9 @@ When in the main directory enter the following into the terminal command prompt
 
 * All images sourced from <a href="https://www.coolclips.com/" target="_blank">Coolclips</a>
 * Favicon and Site Logo (seen in the navbar) created with <a href="https://www.iconsflow.com/" target="_blank">Iconsflow</a>
+* The site I used to create the site Logo would have cost 49$ to create the logo at a higher canvas size
+* The site Icon and favicon-32x32 are the same. 
+* The other favicon images are taken from the main hero image and processed by this <a href="https://realfavicongenerator.net/favicon" target="_blank">favicon generator</a>
 
 ## Acknowledgements
 

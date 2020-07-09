@@ -1,5 +1,6 @@
 {% extends 'base.html' %}{% block title %}Register{%
 endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
+<!--Headline-->
 <div class="container flex-row">
   <div class="card orange lighten-4 less-rounded">
     <div class="card-content text-center">
@@ -13,6 +14,7 @@ endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
         <div class="row">
           <div class="input-field col s12">
             <i class="material-icons prefix">account_circle</i>
+            <!--Username Input-->
             <input
               id="username"
               name="username"
@@ -30,6 +32,7 @@ endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
             data-tooltip="Don't forget to save your password"
           >
             <i class="material-icons prefix">lock</i>
+            <!--Password Input-->
             <input
               id="user_key"
               name="user_key"
@@ -55,6 +58,7 @@ endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
             data-tooltip="Passwords must be identical"
           >
             <i class="material-icons prefix">lock</i>
+            <!--Check Password-->
             <input
               id="user_key_check"
               name="user_key_check"
@@ -71,6 +75,7 @@ endblock %}{% block head %} {{ super() }} {% endblock %} {% block content %}
           <div class="input-field col s12 text-center">
           <p>Is this your first time?</p>
           <p>The register button will activate once you fill in the form.</p>
+          <!--Submit Register Form Button-->
             <button
               id="register_user_button"
               class="waves-effect waves-light btn-large disabled teal lighten-3 black-text less-rounded"
