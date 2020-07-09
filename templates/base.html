@@ -46,6 +46,10 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="{{url_for('static', filename='vendor/css/materialize.min.css')}}"
       type="text/css"
@@ -64,19 +68,10 @@
       <div class="navbar-fixed">
         <nav class="orange rounded-bottom">
           <div class="nav-wrapper container orange">
-            <!--If username in session loop for site logo-->
-            {% if 'username' in session %}
-            <a href="{{url_for('user_landing')}}" class="brand-logo"
-              ><img
-                src="{{url_for('static', filename='assets/images/the-band-room-icon-32x32.png')}}"
-            /></a>
-            {% else %}
             <a href="{{url_for('the_band_room')}}" class="brand-logo"
               ><img
                 src="{{url_for('static', filename='assets/images/the-band-room-icon-32x32.png')}}"
             /></a>
-            {% endif %}
-            <!--End of site logo if username in session loop-->
             <a
               href=""
               data-target="mobile-nav"
@@ -85,8 +80,6 @@
               ><i class="material-icons">menu</i></a
             >
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <!--If username not in session loop-->
-              {% if 'username' not in session %}
               <li
                 class="{% if '/the_band_room' == request.path %} active {% endif %}"
               >
@@ -97,8 +90,6 @@
               >
                 <a href="{{url_for('register')}}">Get Started</a>
               </li>
-              {% endif %}
-              <!--End if username not in session loop-->
               <li
                 class="{% if '/browse_rooms' == request.path %} active {% endif %}"
               >
@@ -137,17 +128,16 @@
           ><img
             src="{{url_for('static', filename='assets/images/the-band-room-icon-32x32.png')}}"
         /></a>
-        <!--If username not in session loop-->
-
-        {% if 'username' not in session %}
-
         <li
-          class="{% if '/the_band_room' == request.path %} active {% elif '/register' == request.path %} active {% endif %}"
+                class="{% if '/the_band_room' == request.path %} active {% endif %}"
+              >
+                <a href="{{url_for('the_band_room')}}">Home</a>
+              </li>
+        <li
+          class="{% if '/register' == request.path %} active {% endif %}"
         >
           <a href="{{url_for('register')}}">Get Started</a>
         </li>
-        {% endif %}
-        <!--End if username not in session loop-->
         <li class="{% if '/browse_rooms' == request.path %} active {% endif %}">
           <a href="{{url_for('browse_rooms')}}">Browse Rooms</a>
         </li>
@@ -194,8 +184,15 @@
     <footer class="page-footer orange rounded-top">
       <div class="footer-copyright orange">
         <div class="container">
-          © 2020 The Band Room - <a class="white-text tooltipped" data-position="top"
-            data-tooltip="On Github" href="https://github.com/Jays-T" target="_blank">Jays-T</a>
+          © 2020 The Band Room -
+          <a
+            class="white-text tooltipped"
+            data-position="top"
+            data-tooltip="On Github"
+            href="https://github.com/Jays-T"
+            target="_blank"
+            >Jays-T</a
+          >
 
           <a
             class="footer-icon grey-text text-lighten-4 right tooltipped"
@@ -228,7 +225,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script
       type="text/javascript"
-      src="{{url_for('static', filename='vendor/js/materialize.js')}}"
+      src="{{url_for('static', filename='vendor/js/materialize.min.js')}}"
     ></script>
     <script
       type="text/javascript"

@@ -48,7 +48,7 @@ def login():
             if bcrypt.hashpw(request.form['user_key'].encode('utf-8'),
                              user_login['user_key']) == user_login['user_key']:
                 session['username'] = request.form['username']
-                flash('Logged in. Welcome ' + session['username'], 'success')
+                flash('Logged in.', 'success')
                 return redirect(url_for('user_landing'))
 
             # Either Username and/or Password are incorrect

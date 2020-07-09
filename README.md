@@ -270,16 +270,16 @@ Phones tested:
 
 # Deployment
 
-* This project and all project files are hosted on GitHub via my GitHub repository at <a href="" target="_blank"></a>
+* This project and all project files are hosted on GitHub via my GitHub repository at <a href="https://github.com/Jays-T/the-band-room" target="_blank"></a>
 * I coded the project using GitPod as my development environment. 
-* This project is deployed with Heroku
+* This project is also hosted and deployed with Heroku
 * To deploy the project using Heroku
    1. Register an account at <a href="https://heroku.com" target="_blank">Heroku</a>
-   2. Go to Heroku and create a new app. Set a name for this app and select the closest region.
-   3. Choose Deployment method as GitHub in Heroku Dashboard and link the Github repository to the Heroku app.
+   2. Go to Heroku site, login and create a new app. Set a name for this app and select the closest region.
+   3. In the Deploy tab of your App dashboard in Heroku, choose Deployment method. I chose Heroku Git, using Heroku CLI and logged in via the terminal using the command: heroku login
    4. In GitPod, create a requirements.txt file using the command pip3 freeze > requirements.txt in the terminal.
    5. Create a Procfile using the commant echo web: python app.py > Procfile in the terminal.
-   6. Login to Heroku via the terminal using Heroku Login
+   6. Login to Heroku via the terminal using command heroku login
    7. Commit your changes using: git add and git commit -m "commit message here"
    7. Push your changes using: git push heroku master
    8. In your Heroku Dashboard, Go to the Settings of your app and then Reveal Config Vars and set the values as follows (remove the spaces and '<'>'from the MONGO_URI):
@@ -319,7 +319,7 @@ To clone this project from GitHub:
 
 If you are using gitpod as your IDE:
 The project runs only from the Master branch the main directory of which is:  /workspace/the-band-room
-When in the main directory enter the following into the command prompt
+When in the main directory enter the following into the terminal command prompt
 1. python3 app.py
 2. This will run the contents of the directory on a local web server, on port 8080.
 3. If you are working in Gitpod this will give you an option to 'open browser' which will open the default route '/the_band_room'

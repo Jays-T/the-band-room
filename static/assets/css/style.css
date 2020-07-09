@@ -4,6 +4,11 @@
     flex-direction: column;
   }
 
+  body, button {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 0.1em;
+  }
+  
   main {
     flex: 1 0 auto;
   }
