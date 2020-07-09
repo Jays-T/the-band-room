@@ -6,18 +6,18 @@
 # CONTENTS
 
 * UX
-  * <a href="#Owner Goals">Owner Goals</a>
-  * <a href="#User Goals">User Goals</a>
-  * <a href="#User Stories">User Stories</a>
-  * <a href="#Strategy">Strategy</a>
+  * <a href="#Owner-Goals">Owner Goals</a>
+  * <a href="#User-Goals">User Goals</a>
+  * <a href="#User-Stories">User Stories</a>
+  * <a href="#My-Strategy">Strategy</a>
   * <a href="#Structure">Structure</a>
-* <a href="#UI">UI</a>
+* <a href="#User-Interface">UI</a>
 * <a href="#Features">Features</a>
 * <a href="#Scope">Scope</a>
-* <a href="#Information Architecture">Information Architecture</a>
-* <a href="#Defensive Design">Defensive Design</a>
-* <a href="#Technologies Used">Technologies Used</a>
-* <a href="#Sites Sourced from">Sites Sourced from</a>
+* <a href="#Information-Architecture">Information Architecture</a>
+* <a href="#Defensive-Design">Defensive Design</a>
+* <a href="#Technologies">Technologies Used</a>
+* <a href="#Sources">Sites Sourced from</a>
 * <a href="#Testing">Testing</a>
 * <a href="#Bugs">Bugs</a>
 * <a href="#Deployment">Deployment</a>
@@ -182,7 +182,6 @@
 * Each of the validation steps included in the Login and Register functions will be included in future in the Add Band Room and Edit Band Room functions, including checking the room_key and matching the username with the room owner_name for further validation.
 
 * The Delete Room function is only accessible via the UI if there is a current session, a user logged in.
-* In case someone bypasses this by manually inputting the correct url route to the login page then:
 * On the band room page there is a button named 'Delete'. On clicking this button the browser will flash an alert asking if the User is sure they want to delete the room.
 * If the answer is no, the User can click on Cancel. If they are sure, they click Ok and this will then lead to a delete room form being shown. 
 * The user must then input the correct room key and click a red 'Delete' button in order to call the delete room function.
@@ -199,7 +198,7 @@
 
 **Regarding DRY in the defensive design of the various functions**
 
-* Only towards the end of this project did I come across a tutorial regaring using decorators within functions to protect endpoints.
+* Only towards the end of this project did I come across a tutorial regarding using decorators within functions to protect endpoints.
 * As I develop this project I will be writing better code as I learn more.
 * For now I've tried to do my best with the knowledge I have currently. 
 
@@ -250,7 +249,7 @@ Phones tested:
 * Xaomi Mi 9
 
 * Site also tested with Chrome's built in 'Inspect Element' preview panes simulating the iPad Pro, iPad, iPhone X, iPhone 6/7/8 plus, iPhone 6/7/8, iPhone 5 SE, Pixel 2 XL, Pixel 2 and Galaxy S5
-* JS and jQuery code tested on <a href="https://www.repl.it " target="_blank">ReplIt</a>
+* JS and jQuery code tested on <a href="https://www.repl.it" target="_blank">ReplIt</a>
 * Entire site tested extensively with console log and print() - once functions/routes were found to be working as intended console.log and print() commands were removed
 * All inter-site links tested on all pages across devices and found to be working
 * All outward links directed at other sites tested and found to be working and opening in a new tab
@@ -275,7 +274,24 @@ Phones tested:
 * I coded the project using GitPod as my development environment. 
 * This project is deployed with Heroku
 * To deploy the project using Heroku
-   1. 
+   1. Register an account at <a href="https://heroku.com" target="_blank">Heroku</a>
+   2. Go to Heroku and create a new app. Set a name for this app and select the closest region.
+   3. Choose Deployment method as GitHub in Heroku Dashboard and link the Github repository to the Heroku app.
+   4. In GitPod, create a requirements.txt file using the command pip3 freeze > requirements.txt in the terminal.
+   5. Create a Procfile using the commant echo web: python app.py > Procfile in the terminal.
+   6. Login to Heroku via the terminal using Heroku Login
+   7. Commit your changes using: git add and git commit -m "commit message here"
+   7. Push your changes using: git push heroku master
+   8. In your Heroku Dashboard, Go to the Settings of your app and then Reveal Config Vars and set the values as follows:
+
+   | KEY         | VALUE                                                                                         |
+   | :---        |                                                                                          ---: |
+   | IP          | 0.0.0.0                                                                                       | 
+   | PORT        | 5000                                                                                          |
+   | MONGO_URI   | mongodb+srv://root:<password>@cluster0-r5ils.mongodb.net/<dbname>?retryWrites=true&w=majority |
+   | SECRET_KEY  | <your_secret_key>                                                                             |
+   
+
 
 ## There are no differences between the currently deployed site and the development version at this time.
 
