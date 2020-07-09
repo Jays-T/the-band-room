@@ -63,7 +63,7 @@
 * My goal was to ensure the information was easy to access while striving for a responsive, simple and colorful design.
 * I knew from the start that I would not have enough time to implement the various features that I have planned for the longterm.
 * My idea for this site came out of frustration with my own Band while looking for a way in which we could organize ourselves and our planning better.
-* I decided to focus on the fundamental basics for the app, CRUD functionality and Defensive Design. 
+* I decided to focus on the fundamental basics for the app, CRUD functionality and Defensive Design.
 
 # Structure
 
@@ -81,8 +81,13 @@
 * The available links on the NavBar adapt according to whether the User is logged in or not. This is both to keep the interface as easy to navigate as possible and also a part of <a href="#Defensive Design">Defensive Design</a>.
 * Certain features, such as the Add Song feature, the Add An Event feature, and the Contact page which are in the initial concept were not yet added and are now listed under <a href="#Features-still-to-implement">Features still to implement</a>
 
+* Fonts
+
 * I chose a single font which I felt matched well with the intended 'fun' feel of the site:
   * <a href="https://fonts.google.com/specimen/Bangers/" target="_blank">Bangers</a> 
+
+* Pagination
+ * Certain areas of the site, such as the browse_rooms area will require pagination and I plan to implement this in future to prevent incessantly long scrolling pages.
 
 # Features
 
@@ -95,7 +100,8 @@
 # Features still to implement
 
 - [ ] Contact Page (allow the user to contact the site owner)
-- [ ] Personalized Image for Band Room
+- [ ] Search (allow the user to search through the site using filters and categories)
+- [ ] Personalized Image for each band for their Band Room
 - [ ] Delete User Account
 - [ ] Calendar (I plan to possibly integrate <a href="https://fullcalendar.io/#demos" target="_blank">Full Calendar</a> )
 - [ ] User availability confirmation (for events scheduled using the calendar)
@@ -205,11 +211,12 @@
 * This will be fixed in upcoming versions of this site. This doesn't actually lead to the room being deleted as the User still needs to input the correct Room_key and click the red delete button.
 * But I would still like to have it designed so that if the User clicks Cancel, the delete form is not shown at all.
 
-**Regarding DRY in the defensive design of the various functions**
+**Regarding some of the repeated code in the defensive design of the various functions**
 
+* I definitely tried to follow the adage DRY (Don't repeat yourself) as this has been an area in which it has been pointed out that I need to improve.
 * Only towards the end of this project did I come across a tutorial regarding using decorators within functions to protect endpoints.
 * As I develop this project I will be writing better code as I learn more.
-* For now I've tried to do my best with the knowledge I have currently. 
+* For now I've tried to do my best with the knowledge I currently have. 
 
 **Error Handling**
 
