@@ -23,9 +23,9 @@
 * <a href="#Deployment">Deployment</a>
 * <a href="#Credits">Credits</a>
 
-# **UX**
+<img src="/wireframes/responsive-900x544.png"/>
 
-<a href="">wireframes</a>
+# **UX**
 
 # Owner Goals
 
@@ -71,46 +71,51 @@
 
 # User Interface
 
+* Initial concept
+
+<img src="/wireframes/the-band-room.png"/>
+
 * I wanted the landing page to be simple and make it easy for the user to quickly get straight to the main purpose and service of the site.
+* I wanted the site to convey the idea of a bit of fun rather than all work.
 * Certain areas of the site are only accessible while logged in, this was done intentionally.
 * The available links on the NavBar adapt according to whether the User is logged in or not. This is both to keep the interface as easy to navigate as possible and also a part of <a href="#Defensive Design">Defensive Design</a>.
+* Certain features, such as the Add Song feature, the Add An Event feature, and the Contact page which are in the initial concept were not yet added and are now listed under <a href="#Features-still-to-implement">Features still to implement</a>
 
-* Fonts I chose are:
-  * <a href="" target="_blank"></a> 
-  * <a href="" target="_blank"></a> 
-  * <a href="" target="_blank"></a> 
+* I chose a single font which I felt matched well with the intended 'fun' feel of the site:
+  * <a href="https://fonts.google.com/specimen/Bangers/" target="_blank">Bangers</a> 
 
 # Features
 
-* Register User Account
-* Create Band Room
-* Browse Rooms
-* Edit Band Room
-* Delete Band Room
+- [x] Register User Account
+- [x] Create Band Room
+- [x] Browse Rooms
+- [x] Edit Band Room
+- [x] Delete Band Room
 
 # Features still to implement
 
-* Personalized Image for Band Room
-* Delete User Account
-* Calendar (I plan to possibly integrate <a href="https://fullcalendar.io/#demos" target="_blank">Full Calendar</a> )
-* User availability confirmation (for events scheduled using the calendar)
-* Add Band
-* Invite and add Band members
-* Invite Friends
-* One to Many and Many to One accessibility such as:
-  * One User is a member of multiple bands
-  * One User able to access multiple Band Rooms (using relevant Room Key)
-  * Mulitple Users able to access and Edit one Band Room (using relevant Room Key and Band Membership)
-* Notifications via App
-* Notifications via email
-* Chat - Allow band members to chat to each other via the app
-* Add Song to learn list
-* Progress tracker (Song learning, Song writing, Set readiness, Gig readiness, Facebook Page likes, Instagram followers count)
-* Song List - Songs ready for performing/recording
-* Share Lyrics, share music, 
-* Suggest Song
-* Vote on suggested Song
-* Add notes
+- [ ] Contact Page (allow the user to contact the site owner)
+- [ ] Personalized Image for Band Room
+- [ ] Delete User Account
+- [ ] Calendar (I plan to possibly integrate <a href="https://fullcalendar.io/#demos" target="_blank">Full Calendar</a> )
+- [ ] User availability confirmation (for events scheduled using the calendar)
+- [ ] Add Band
+- [ ] Invite and add Band members
+- [ ] Invite Friends
+- [ ] One to Many and Many to One accessibility such as:
+  - [ ] One User is a member of multiple bands
+  - [ ] One User able to access multiple Band Rooms (using relevant Room Key)
+  - [ ] Mulitple Users able to access and Edit one Band Room (using relevant Room Key and Band Membership)
+- [ ] Notifications via App
+- [ ] Notifications via email
+- [ ] Chat - Allow band members to chat to each other via the app
+- [ ] Add Song to learn list
+- [ ] Progress tracker (Song learning, Song writing, Set readiness, Gig readiness, Facebook Page likes, Instagram followers count)
+- [ ] Song List - Songs ready for performing/recording
+- [ ] Share Lyrics, share music, 
+- [ ] Suggest Song
+- [ ] Vote on suggested Song
+- [ ] Add notes
 
 
 # Scope
