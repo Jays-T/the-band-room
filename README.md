@@ -1,4 +1,4 @@
-# Welcome to <a href="http://the-band-room.herokuapp.com/the_band_room">The Band Room</a>
+# Welcome to <a href="https://the-band-room.herokuapp.com/the_band_room">The Band Room</a>
 
 * This project is currently purely for educational purposes.
 * I went with this idea because the future product that I envisage is an app that I personally want to be able to use for my Band.
